@@ -1,0 +1,6 @@
+package ru.thirteenth.atlas.entity;
+
+public enum State {
+    START,INFO_PAGE,MAIN_MENU, MARKET_CONDITION_MAIN, CHECK_MARKET_CONDITION,
+    FEAR_AND_GREED,CRYPTOCURRENCY_MENU, COIN_INFO_MENU
+}

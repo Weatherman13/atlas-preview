@@ -1,0 +1,15 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_HOST:http://localhost:8761/eureka/}
+  instance:
+    instance-id: cryptohouse-instance-${random.uuid}
+server:
+  port: 9090
+spring:
+  application:
+    name: cryptohouse
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false

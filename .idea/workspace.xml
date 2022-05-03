@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="134960b3-c518-4df0-9750-b33e38ecc3f9" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/AtlasApplication.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/CryptoBotConfig/CryptoBot.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/crypto-house/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/CryptoHouseApplication.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/service/BitcoinDominanceInfoService.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/service/FearAndGreedIndexService.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/service/impl/CoinInfoServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/service/impl/FearAndGreedServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/crypto-house/src/test/java/com/litesoftwares/coingecko/examples/CoinsExample.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/eureka/src/main/java/ru/thirteenth/eureka/EurekaApplication.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="28LWQsORitGYijJrYhvesyfJ2mq" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Weatherman/Documents/ProjectIdea/AtlasBot/atlas/src/main/resources",
+    "nodejs_package_manager_path": "npm",
+    "spring.configuration.checksum": "8ba158bcaac33d86887243c76ed378c1"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
+  }
+}]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Weatherman\Documents\ProjectIdea\AtlasBot\atlas\src\main\resources" />
+      <recent name="C:\Users\Weatherman\Documents\ProjectIdea\AtlasBot\atlas\src\main\java\ru\thirteenth\atlas\dto" />
+      <recent name="C:\Users\Weatherman\Documents\ProjectIdea\AtlasBot\crypto-house\src\main\java" />
+      <recent name="C:\Users\Weatherman\Documents\ProjectIdea\AtlasBot\crypto-house\src\main\java\com\litesoftwares\coingecko\domain" />
+      <recent name="C:\Users\Weatherman\Documents\ProjectIdea\AtlasBot\crypto-house\src\main\java\com\litesoftwares\coingecko\domain\Coins" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ru.thirteenth.atlas.dto" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean" />
+      <command value="mvn spring-boot:build-image" />
+    </option>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.AtlasApplication">
+    <configuration name="AssetPlatformsExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.litesoftwares.coingecko.examples.AssetPlatformsExample" />
+      <module name="cryptohouse" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.litesoftwares.coingecko.examples.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CoinsExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.litesoftwares.coingecko.examples.CoinsExample" />
+      <module name="cryptohouse" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.litesoftwares.coingecko.examples.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CryptoController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.thirteenth.kryptohouse.controller.CryptoController" />
+      <module name="cryptohouse" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.thirteenth.kryptohouse.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AtlasApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
+      <module name="atlas" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ru.thirteenth.atlas.AtlasApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CryptoHouseApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="cryptohouse" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ru.thirteenth.kryptohouse.CryptoHouseApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.thirteenth.kryptohouse.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="eureka" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ru.thirteenth.eureka.EurekaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.AssetPlatformsExample" />
+      <item itemvalue="Application.CoinsExample" />
+      <item itemvalue="Application.CryptoController" />
+      <item itemvalue="Spring Boot.EurekaApplication" />
+      <item itemvalue="Spring Boot.AtlasApplication" />
+      <item itemvalue="Spring Boot.CryptoHouseApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.AtlasApplication" />
+        <item itemvalue="Spring Boot.CryptoHouseApplication" />
+        <item itemvalue="Application.CryptoController" />
+        <item itemvalue="Application.CoinsExample" />
+        <item itemvalue="Application.AssetPlatformsExample" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="134960b3-c518-4df0-9750-b33e38ecc3f9" name="Changes" comment="" />
+      <created>1650996333045</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1650996333045</updated>
+      <workItem from="1650996334133" duration="2305000" />
+      <workItem from="1650998681428" duration="4037000" />
+      <workItem from="1651002979996" duration="621000" />
+      <workItem from="1651004411648" duration="8368000" />
+      <workItem from="1651050539940" duration="4042000" />
+      <workItem from="1651082418373" duration="419000" />
+      <workItem from="1651084265664" duration="210000" />
+      <workItem from="1651086211390" duration="353000" />
+      <workItem from="1651087910533" duration="5892000" />
+      <workItem from="1651166362357" duration="34301000" />
+      <workItem from="1651236195051" duration="16491000" />
+      <workItem from="1651321176545" duration="36302000" />
+      <workItem from="1651375701325" duration="27773000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
