@@ -3,6 +3,7 @@ package ru.thirteenth.atlas.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.thirteenth.atlas.dao.UserRepository;
+import ru.thirteenth.atlas.entity.Language;
 import ru.thirteenth.atlas.entity.State;
 import ru.thirteenth.atlas.entity.User;
 
@@ -23,6 +24,12 @@ public class UserServiceImpl implements UserService {
     public void updateUserStateByTelegramId(long telegramId, State state) {
         var user = repository.findUserByTelegramId(telegramId);
         user.setState(state.toString());
+        repository.save(user);
+    }
+
+    public void updateUserLanguageByTelegramId(long telegramId, Language language){
+        var user = repository.findUserByTelegramId(telegramId);
+        user.setLanguage(language.toString());
         repository.save(user);
     }
 

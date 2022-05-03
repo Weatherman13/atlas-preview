@@ -60,5 +60,4 @@ public class CoinServiceImpl {
                 .orElse(new CurrencyInfo("nope"));
     }
 
-
 }

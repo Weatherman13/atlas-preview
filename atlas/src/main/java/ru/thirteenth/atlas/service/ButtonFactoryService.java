@@ -6,13 +6,9 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMa
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardButton;
-import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardButtonPollType;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
-import ru.thirteenth.atlas.dao.UserRepository;
 
 import java.io.UnsupportedEncodingException;
-import java.net.URISyntaxException;
-import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 @Service
@@ -177,7 +173,7 @@ public class ButtonFactoryService {
     }
 
     //
-    public ReplyKeyboardMarkup getNavigationMenu(ResourceBundle bundle) throws UnsupportedEncodingException {
+    public ReplyKeyboardMarkup getNavigationMenu(ResourceBundle bundle) {
 
 
         var but1 = KeyboardButton
@@ -223,5 +219,75 @@ public class ButtonFactoryService {
                 .build();
     }
 
+    public InlineKeyboardMarkup getOptionMenu (ResourceBundle bundle){
+        List<List<InlineKeyboardButton>> middleButtons = new ArrayList<>();
 
+        var changeLanguageButton =
+                InlineKeyboardButton
+                        .builder()
+                        .text(bundle.getString("ChangeLanguageButton"))
+                        .callbackData("GetLanguageOption")
+                        .build();
+
+
+        middleButtons.add(Arrays.asList(changeLanguageButton));
+
+        return InlineKeyboardMarkup.builder().keyboard(middleButtons).build();
+    }
+    public InlineKeyboardMarkup getOptionLanguageMenu(ResourceBundle bundle){
+        List<List<InlineKeyboardButton>> middleButtons = new ArrayList<>();
+        List<InlineKeyboardButton> backButtons = new ArrayList<>();
+
+
+        var ruButton =
+                InlineKeyboardButton
+                        .builder()
+                        .text(bundle.getString("RuLanguageButton"))
+                        .callbackData("SetRuLanguage")
+                        .build();
+        var enButton =
+                InlineKeyboardButton
+                        .builder()
+                        .text(bundle.getString("EnLanguageButton"))
+                        .callbackData("SetEnLanguage")
+                        .build();
+        var backButton =
+                InlineKeyboardButton
+                        .builder()
+                        .text(bundle.getString("BackButton"))
+                        .callbackData("GetOptionMenu")
+                        .build();
+
+
+        middleButtons.add(Arrays.asList(enButton,ruButton));
+        backButtons.add(backButton);
+
+        return InlineKeyboardMarkup.builder().keyboard(middleButtons).keyboardRow(backButtons).build();
+    }
+
+
+    public InlineKeyboardMarkup getMarketMenu(ResourceBundle bundle){
+
+        List<List<InlineKeyboardButton>> middleButtons = new ArrayList<>();
+
+
+        var fagButton =
+                InlineKeyboardButton
+                        .builder()
+                        .text(bundle.getString("FaQButton"))
+                        .callbackData("GetFaQ")
+                        .build();
+
+        var top15Button =
+                InlineKeyboardButton
+                        .builder()
+                        .text(bundle.getString("Top15Cap"))
+                        .callbackData("GetTop15Cap")
+                        .build();
+
+
+        middleButtons.add(Arrays.asList(top15Button,fagButton));
+
+        return InlineKeyboardMarkup.builder().keyboard(middleButtons).build();
+    }
 }

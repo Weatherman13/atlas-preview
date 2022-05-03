@@ -44,6 +44,7 @@ public class MarketConditionServiceImpl implements MarketConditionService {
     public List<CurrencyInfo> getTopCurrency() throws URISyntaxException {
         var responseTop =
                 restTemplate.getForEntity(new URI(CRYPTO_HOUSE_SERVICE + "coin-all"), MarketList.class);
+       responseTop.getBody().getMarketList().stream().forEach(System.out::println);
 
         return responseTop
                 .getBody()

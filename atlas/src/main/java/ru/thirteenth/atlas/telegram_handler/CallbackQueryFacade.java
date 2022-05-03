@@ -69,21 +69,21 @@ public class CallbackQueryFacade {
                 .build();
     }
 
-    public SendMessage getFearAndGreed(CallbackQuery callback) throws URISyntaxException {
-        var marketCondition = this.marketConditionService.getMarketCondition();
-        var userTelegramId = callback.getFrom().getId();
-
-        userService.updateUserStateByTelegramId(userTelegramId, State.CHECK_MARKET_CONDITION);
-
-        return SendMessage.builder()
-                .chatId((callback.getMessage().getChatId().toString()))
-                .text("⚠️CURRENT STATE OF THE MARKET⚠️" + "\n" + "\n"
-                        + "\uD83D\uDD70  Fear and Greed Index: "
-                        + marketCondition.getValueFnG() + "\n"
-                        + "\uD83E\uDD28  Classification: " + marketCondition.getClassificationFnG())
-                .replyMarkup(buttonService.getBackToMarketConditionMenu())
-                .build();
-    }
+//    public SendMessage getFearAndGreed(CallbackQuery callback) throws URISyntaxException {
+//        var marketCondition = this.marketConditionService.getMarketCondition();
+//        var userTelegramId = callback.getFrom().getId();
+//
+//        userService.updateUserStateByTelegramId(userTelegramId, State.CHECK_MARKET_CONDITION);
+//
+//        return SendMessage.builder()
+//                .chatId((callback.getMessage().getChatId().toString()))
+//                .text("⚠️CURRENT STATE OF THE MARKET⚠️" + "\n" + "\n"
+//                        + "\uD83D\uDD70  Fear and Greed Index: "
+//                        + marketCondition.getValueFnG() + "\n"
+//                        + "\uD83E\uDD28  Classification: " + marketCondition.getClassificationFnG())
+//                .replyMarkup(buttonService.getBackToMarketConditionMenu())
+//                .build();
+//    }
 
     public SendMessage getTop15(CallbackQuery callback) throws URISyntaxException {
         var cur = marketConditionService.getTopCurrency();

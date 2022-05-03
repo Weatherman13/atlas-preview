@@ -2,7 +2,6 @@ package ru.thirteenth.atlas.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.apache.tomcat.jni.Local;
 import ru.thirteenth.atlas.exception.UserLanguageInvalidTypeException;
 
 import javax.persistence.*;
@@ -39,7 +38,7 @@ public class User {
         this.language = language;
     }
 
-    public static User telegramUserHandler(org.telegram.telegrambots.meta.api.objects.User telegramUser) {
+    public static User telegramUserMapper(org.telegram.telegrambots.meta.api.objects.User telegramUser) {
 
         var telegramId = telegramUser.getId();
         var username = telegramUser.getUserName();

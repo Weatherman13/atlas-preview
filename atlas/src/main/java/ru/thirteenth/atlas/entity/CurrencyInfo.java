@@ -66,4 +66,7 @@ public class CurrencyInfo {
              return "\uD83D\uDCC9";
     }
 
+
+
+
 }

@@ -2,6 +2,7 @@ package ru.thirteenth.atlas.CryptoBotConfig;
 
 import lombok.SneakyThrows;
 
+import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -11,8 +12,7 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import ru.thirteenth.atlas.service.ButtonFactoryService;
 import ru.thirteenth.atlas.service.CoinServiceImpl;
 import ru.thirteenth.atlas.service.UserServiceImpl;
-import ru.thirteenth.atlas.telegram_handler.CallbackQueryFacade;
-import ru.thirteenth.atlas.telegram_handler.CommandFacade;
+import ru.thirteenth.atlas.telegram_handler.*;
 
 
 @Component
@@ -20,8 +20,7 @@ public class CryptoBot extends TelegramLongPollingBot {
     private final String BOT_TOKEN = "5304189702:AAHZQMFiaH0zU_XZy9IYb37G_t8oMHCV6Lc";
     private final String BOT_USERNAME = "atlas_syndicate_bot";
 
-//    private final MarketConditionService serv = MarketConditionService.getInstance();
-
+    private final OptionsFacade optionsFacade;
     private final CommandFacade commandFacade;
 
     private final ButtonFactoryService buttonService;
@@ -32,13 +31,25 @@ public class CryptoBot extends TelegramLongPollingBot {
 
     private final UserServiceImpl userService;
 
+    private final InformationFacade informationFacade;
+
+    private final MarketFacade marketFacade;
+
+
+
     @Autowired
-    public CryptoBot(CommandFacade commandFacade, ButtonFactoryService buttonService, CallbackQueryFacade callbackFacade, CoinServiceImpl coinService, UserServiceImpl userService) {
+    public CryptoBot(OptionsFacade optionsFacade, CommandFacade commandFacade,
+                     ButtonFactoryService buttonService, CallbackQueryFacade callbackFacade,
+                     CoinServiceImpl coinService, UserServiceImpl userService,
+                     InformationFacade informationFacade, MarketFacade marketFacade) {
+        this.optionsFacade = optionsFacade;
         this.commandFacade = commandFacade;
         this.buttonService = buttonService;
         this.callbackFacade = callbackFacade;
         this.coinService = coinService;
         this.userService = userService;
+        this.informationFacade = informationFacade;
+        this.marketFacade = marketFacade;
     }
 
     @Override
@@ -101,14 +112,10 @@ public class CryptoBot extends TelegramLongPollingBot {
                     execute(callbackFacade.getMarketConditionMenu(callBack));
                     return;
                 }
-                case "GetTop15": {
-                    execute(callbackFacade.getTop15(callBack));
-                    return;
-                }
-                case "GetFaG": {
-                    execute(callbackFacade.getFearAndGreed(callBack));
-                    return;
-                }
+//                case "GetFaG": {
+//                    execute(callbackFacade.getFearAndGreed(callBack));
+//                    return;
+//                }
                 case "GetBackToMarketConditionMenu": {
                     execute(callbackFacade.getMarketConditionMenu(callBack));
                     return;
@@ -125,12 +132,65 @@ public class CryptoBot extends TelegramLongPollingBot {
                     execute(callbackFacade.getAvailableCoin(callBack));
                     return;
                 }
+                case "GetLanguageOption": {
+                    execute(optionsFacade.getOptionLanguageMenu(callBack));
+                    return;
+                }
+                case "SetRuLanguage":{
+                    execute(optionsFacade.setRuLanguage(callBack));
+                    return;
+                }
+                case "SetEnLanguage":{
+                    execute(optionsFacade.setEnLanguage(callBack));
+                    return;
+                }
+
+                case "GetOptionMenu":{
+                    execute(optionsFacade.getOptionMenu(callBack));
+                    return;
+                }
+                case "GetTop15Cap":{
+                    execute(marketFacade.getTop15(callBack));
+                    return;
+                }
+                case "GetFaQ":{
+                    execute(marketFacade.getFearAndGreed(callBack));
+                    return;
+                }
+
 
             }
         }
 
-        if (update.hasMessage() ) {
+        if (update.hasMessage() && update.getMessage().hasText() ) {
             Message message = update.getMessage();
+
+            switch (message.getText()){
+                case "\uD83D\uDDD2Information": {
+                    execute(informationFacade.getInfo(message));
+                    return;
+                }
+                case "\uD83D\uDDD2Информация": {
+                    execute(informationFacade.getInfo(message));
+                    return;
+                }
+                case  "⚙️Settings": {
+                    execute(optionsFacade.getOptionMenu(message));
+                    return;
+                }
+                case "⚙️Дополнительно": {
+                    execute(optionsFacade.getOptionMenu(message));
+                    return;
+                }
+                case "\uD83C\uDFDBMarket":{
+                    execute(marketFacade.getMarketMenu(message));
+                    return;
+                }
+                case "\uD83C\uDFDBРынок":{
+                    execute(marketFacade.getMarketMenu(message));
+                    return;
+                }
+            }
 
             if (message.hasEntities()) {
 

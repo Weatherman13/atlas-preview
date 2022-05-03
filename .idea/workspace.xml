@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="134960b3-c518-4df0-9750-b33e38ecc3f9" name="Changes" comment="" />
+    <list default="true" id="134960b3-c518-4df0-9750-b33e38ecc3f9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/CryptoBotConfig/CryptoBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/CryptoBotConfig/CryptoBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/entity/CurrencyInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/entity/CurrencyInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/entity/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/entity/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/resources/resource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/resources/resource_en.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/resources/resource_en.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/resources/resource_ru.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/resources/resource_ru.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/ButtonFactoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/ButtonFactoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/CoinServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/CoinServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/MarketConditionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/MarketConditionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/telegram_handler/CallbackQueryFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/telegram_handler/CallbackQueryFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/telegram_handler/CommandFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/telegram_handler/CommandFacade.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +36,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/AtlasApplication.java" root0="FORCE_HIGHLIGHTING" />
@@ -61,26 +79,29 @@
     </option>
   </component>
   <component name="ProjectId" id="28LWQsORitGYijJrYhvesyfJ2mq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Weatherman/Documents/ProjectIdea/AtlasBot/atlas/src/main/resources",
-    "nodejs_package_manager_path": "npm",
-    "spring.configuration.checksum": "8ba158bcaac33d86887243c76ed378c1"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Weatherman/Documents/ProjectIdea/AtlasBot/atlas/src/main/resources&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;8ba158bcaac33d86887243c76ed378c1&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -214,11 +235,23 @@
       <workItem from="1651166362357" duration="34301000" />
       <workItem from="1651236195051" duration="16491000" />
       <workItem from="1651321176545" duration="36302000" />
-      <workItem from="1651375701325" duration="27773000" />
+      <workItem from="1651375701325" duration="36081000" />
+      <workItem from="1651593356222" duration="15840000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
