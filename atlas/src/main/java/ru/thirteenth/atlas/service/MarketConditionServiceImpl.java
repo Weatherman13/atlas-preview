@@ -1,21 +1,18 @@
 package ru.thirteenth.atlas.service;
 
-import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import ru.thirteenth.atlas.dto.Currency;
-import ru.thirteenth.atlas.dto.FearAndGreed;
-import ru.thirteenth.atlas.dto.MarketList;
-import ru.thirteenth.atlas.entity.CurrencyInfo;
-import ru.thirteenth.atlas.entity.MarketCondition;
+import ru.thirteenth.atlas.dto.FearAndGreedDTO;
+import ru.thirteenth.atlas.dto.MarketListDTO;
+import ru.thirteenth.atlas.mapper.CurrencyDtoModelMapper;
+import ru.thirteenth.atlas.model.CurrencyModel;
+import ru.thirteenth.atlas.model.FearAndGreedModel;
 
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Set;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 @Service
@@ -24,35 +21,35 @@ public class MarketConditionServiceImpl implements MarketConditionService {
     private final String CRYPTO_HOUSE_SERVICE = "http://cryptohouse/";
     private final RestTemplate restTemplate;
 
+
     @Autowired
     public MarketConditionServiceImpl(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
 
-    public MarketCondition getMarketCondition() throws URISyntaxException {
+    public FearAndGreedModel getMarketCondition() throws URISyntaxException {
         var responseFnG =
-                restTemplate.getForEntity(new URI(CRYPTO_HOUSE_SERVICE + "fng"), FearAndGreed.class);
+                restTemplate.getForEntity(new URI(CRYPTO_HOUSE_SERVICE + "fng"), FearAndGreedDTO.class);
 
         var fng = responseFnG.getBody();
 
         var valueFnG = Integer.valueOf(fng.getValue());
         var valueClassification = fng.getValueClassification();
 
-        return new MarketCondition(valueFnG, valueClassification);
+        return new FearAndGreedModel(valueFnG, valueClassification);
     }
 
-    public List<CurrencyInfo> getTopCurrency() throws URISyntaxException {
+    public List<CurrencyModel> getTopCurrency() throws URISyntaxException {
         var responseTop =
-                restTemplate.getForEntity(new URI(CRYPTO_HOUSE_SERVICE + "coin-all"), MarketList.class);
-       responseTop.getBody().getMarketList().stream().forEach(System.out::println);
+                restTemplate.getForEntity(new URI(CRYPTO_HOUSE_SERVICE + "coin-all"), MarketListDTO.class);
 
         return responseTop
                 .getBody()
                 .getMarketList()
                 .stream()
-                .map(CurrencyInfo::currencyHandler)
-                .filter(cur -> cur.getPair().getCurrencyB().equals("USDT"))
-                .sorted(Comparator.comparing(CurrencyInfo::getMarketCup).reversed())
+                .map(obj -> CurrencyDtoModelMapper.INSTANCE.currencyDtoToModel(obj))
+                .filter(cur -> cur.getPairModel().getCurrencyB().equals("USDT"))
+                .sorted(Comparator.comparing(CurrencyModel::getMarketCup).reversed())
                 .limit(15)
                 .collect(Collectors.toList());
 

@@ -8,9 +8,9 @@ import java.util.List;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class FearAndGreedRequest {
+public class FearAndGreedResponseDTO {
     @JsonProperty("name")
     private String name;
     @JsonProperty("data")
-    private List<FearAndGreed> fngList;
+    private List<FearAndGreedDTO> fngList;
 }

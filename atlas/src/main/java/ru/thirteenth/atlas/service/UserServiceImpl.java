@@ -1,10 +1,11 @@
 package ru.thirteenth.atlas.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import ru.thirteenth.atlas.dao.UserRepository;
-import ru.thirteenth.atlas.entity.Language;
-import ru.thirteenth.atlas.entity.State;
+import ru.thirteenth.atlas.model.Language;
+import ru.thirteenth.atlas.model.State;
 import ru.thirteenth.atlas.entity.User;
 
 @Service

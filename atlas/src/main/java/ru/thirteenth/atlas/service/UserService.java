@@ -1,6 +1,6 @@
 package ru.thirteenth.atlas.service;
 
-import ru.thirteenth.atlas.entity.State;
+import ru.thirteenth.atlas.model.State;
 import ru.thirteenth.atlas.entity.User;
 
 public interface UserService {

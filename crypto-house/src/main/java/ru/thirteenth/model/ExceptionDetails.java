@@ -1,4 +1,4 @@
-package ru.thirteenth.atlas.dto;
+package ru.thirteenth.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

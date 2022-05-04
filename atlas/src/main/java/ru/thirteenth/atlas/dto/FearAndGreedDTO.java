@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class FearAndGreed {
+public class FearAndGreedDTO {
     @JsonProperty("value")
     private String value;
     @JsonProperty("value_classification")

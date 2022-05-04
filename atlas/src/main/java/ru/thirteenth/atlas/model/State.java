@@ -1,4 +1,4 @@
-package ru.thirteenth.atlas.entity;
+package ru.thirteenth.atlas.model;
 
 public enum State {
     START,INFO_PAGE,MAIN_MENU, MARKET_CONDITION_MAIN, CHECK_MARKET_CONDITION,

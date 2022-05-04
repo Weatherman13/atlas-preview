@@ -4,7 +4,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-import ru.thirteenth.kryptohouse.dto.ExceptionDetails;
+import ru.thirteenth.model.ExceptionDetails;
 import ru.thirteenth.kryptohouse.exception.FearAndGreedRequestIsEmptyException;
 
 import javax.servlet.http.HttpServletRequest;

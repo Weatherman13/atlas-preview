@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Currency {
+public class CurrencyDTO {
     @JsonProperty("no")
     private int id;
     @JsonProperty("symbol")

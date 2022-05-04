@@ -7,7 +7,7 @@ import lombok.Data;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class PairInfo {
+public class PairInfoDTO {
     @JsonProperty("quoteVolume")
     private String quoteVolume;
     @JsonProperty("baseVolume")

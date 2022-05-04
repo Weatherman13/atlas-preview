@@ -5,14 +5,12 @@ import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
 import org.telegram.telegrambots.meta.api.objects.Message;
-import ru.thirteenth.atlas.entity.CurrencyInfo;
-import ru.thirteenth.atlas.entity.State;
+import ru.thirteenth.atlas.model.State;
 import ru.thirteenth.atlas.service.ButtonFactoryService;
 import ru.thirteenth.atlas.service.MarketConditionServiceImpl;
 import ru.thirteenth.atlas.service.UserServiceImpl;
 
 import java.net.URISyntaxException;
-import java.util.function.Function;
 
 @Component
 public class MarketFacade {
@@ -61,6 +59,7 @@ public class MarketFacade {
 
     public SendMessage getTop15(CallbackQuery callback) throws URISyntaxException {
         var currencyList = marketConditionService.getTopCurrency();
+        System.out.println(currencyList);
         var userTelegramId = callback.getFrom().getId();
         var user = userService.getUserByTelegramId(userTelegramId);
         var bundle = user.getResourceBundle();

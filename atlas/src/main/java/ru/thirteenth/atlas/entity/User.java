@@ -2,6 +2,7 @@ package ru.thirteenth.atlas.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ru.thirteenth.atlas.model.Language;
 import ru.thirteenth.atlas.exception.UserLanguageInvalidTypeException;
 
 import javax.persistence.*;
@@ -9,7 +10,7 @@ import javax.persistence.*;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
-import static ru.thirteenth.atlas.entity.State.START;
+import static ru.thirteenth.atlas.model.State.START;
 
 @Data
 @NoArgsConstructor
