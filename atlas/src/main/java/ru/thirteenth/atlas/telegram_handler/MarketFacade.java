@@ -59,7 +59,6 @@ public class MarketFacade {
 
     public SendMessage getTop15(CallbackQuery callback) throws URISyntaxException {
         var currencyList = marketConditionService.getTopCurrency();
-        System.out.println(currencyList);
         var userTelegramId = callback.getFrom().getId();
         var user = userService.getUserByTelegramId(userTelegramId);
         var bundle = user.getResourceBundle();

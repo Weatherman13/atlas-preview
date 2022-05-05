@@ -3,6 +3,7 @@ package ru.thirteenth.atlas.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ru.thirteenth.atlas.dto.CurrencyDTO;
 
 
 @Data
@@ -34,6 +35,31 @@ public class CurrencyModel {
     }
 
 
+
+    public static CurrencyModel currencyHandler(CurrencyDTO currency) {
+
+        int id = currency.getId();
+        String symbol = currency.getSymbol();
+        String name = currency.getName();
+        PairModel pair = new PairModel(currency.getCurrA(), currency.getCurrB());
+        double rate = Double.parseDouble(currency.getRate());
+        double volA = Double.parseDouble(currency.getVolA().replace(",", ""));
+        double volB = Double.parseDouble(currency.getVolB().replace(",", ""));
+        String currA = currency.getCurrA();
+        String currB = currency.getCurrB();
+        double ratePercent = Double.parseDouble(currency.getRatePercent());
+        String trend = currency.getTrend();
+        double supply = Double.parseDouble(currency.getSupply().replace(",", ""));
+        long marketCup = Long.parseLong(currency.getMarketCap().replace(",", ""));
+        String marketCupS = currency.getMarketCap();
+        int lq = Integer.parseInt(currency.getLq());
+        int pRate = currency.getPRate();
+        double high = Double.parseDouble(currency.getHigh());
+        double low = Double.parseDouble(currency.getLow());
+
+        return new CurrencyModel(id, symbol, name, pair, rate, volA, volB, currA, currB, ratePercent, trend,
+                supply, marketCup,marketCupS , lq, pRate, high, low);
+    }
     public String trendToString (CurrencyModel cur){
         if (cur.getTrend().equals("up")) return "\uD83D\uDCC8";
              return "\uD83D\uDCC9";

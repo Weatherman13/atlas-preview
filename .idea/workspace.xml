@@ -6,6 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="134960b3-c518-4df0-9750-b33e38ecc3f9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/mapper/CurrencyDtoModelMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/mapper/CurrencyDtoModelMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/model/CurrencyModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/model/CurrencyModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/MarketConditionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/MarketConditionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/telegram_handler/MarketFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/telegram_handler/MarketFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atlas/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/resources/application.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -107,8 +112,8 @@
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
-      <command value="mvn clean" />
       <command value="mvn --builder" />
+      <command value="mvn clean" />
       <command value="mvn spring-boot:build-image" />
     </option>
   </component>
@@ -119,20 +124,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.AtlasApplication">
-    <configuration name="CoinsExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.litesoftwares.coingecko.examples.CoinsExample" />
-      <module name="cryptohouse" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.litesoftwares.coingecko.examples.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Docker.docker-compose.yaml: Compose Deployment">
     <configuration name="CryptoController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.thirteenth.kryptohouse.controller.CryptoController" />
       <module name="cryptohouse" />
@@ -186,10 +178,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="docker-compose.yaml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yaml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Application.Test" />
-      <item itemvalue="Application.CoinsExample" />
       <item itemvalue="Application.CryptoController" />
+      <item itemvalue="Docker.docker-compose.yaml: Compose Deployment" />
       <item itemvalue="Spring Boot.EurekaApplication" />
       <item itemvalue="Spring Boot.CryptoHouseApplication" />
       <item itemvalue="Spring Boot.AtlasApplication" />
@@ -198,9 +198,9 @@
       <list>
         <item itemvalue="Spring Boot.AtlasApplication" />
         <item itemvalue="Spring Boot.CryptoHouseApplication" />
+        <item itemvalue="Docker.docker-compose.yaml: Compose Deployment" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.CryptoController" />
-        <item itemvalue="Application.CoinsExample" />
       </list>
     </recent_temporary>
   </component>
@@ -228,7 +228,7 @@
       <workItem from="1651593356222" duration="16153000" />
       <workItem from="1651663883663" duration="17914000" />
       <workItem from="1651692323573" duration="4536000" />
-      <workItem from="1651752314415" duration="720000" />
+      <workItem from="1651752314415" duration="7691000" />
     </task>
     <servers />
   </component>

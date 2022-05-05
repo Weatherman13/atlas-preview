@@ -22,6 +22,7 @@ services:
     restart: always
     environment:
       - EUREKA_HOST=http://eureka:8761/eureka/
+      - MYSQL_HOST=db
   db:
     image: mysql:5.7
     command: --default-authentication-plugin=mysql_native_password

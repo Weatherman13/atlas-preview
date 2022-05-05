@@ -7,7 +7,7 @@ import org.mapstruct.factory.Mappers;
 import ru.thirteenth.atlas.dto.CurrencyDTO;
 import ru.thirteenth.atlas.model.CurrencyModel;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface CurrencyDtoModelMapper {
     CurrencyDtoModelMapper INSTANCE = Mappers.getMapper(CurrencyDtoModelMapper.class);
 

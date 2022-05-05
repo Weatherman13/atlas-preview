@@ -48,6 +48,7 @@ public class MarketConditionServiceImpl implements MarketConditionService {
                 .getMarketList()
                 .stream()
                 .map(obj -> CurrencyDtoModelMapper.INSTANCE.currencyDtoToModel(obj))
+//                .map(CurrencyModel::currencyHandler)
                 .filter(cur -> cur.getPairModel().getCurrencyB().equals("USDT"))
                 .sorted(Comparator.comparing(CurrencyModel::getMarketCup).reversed())
                 .limit(15)

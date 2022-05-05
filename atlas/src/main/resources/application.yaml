@@ -17,7 +17,8 @@ spring:
     url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/atlas-bot?useSSL=false&serverTimezone=UTC
     username: borz0y
     password: 58rjK[jP1
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
   jpa:
     hibernate:
       ddl-auto: update
