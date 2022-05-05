@@ -22,3 +22,19 @@ services:
     restart: always
     environment:
       - EUREKA_HOST=http://eureka:8761/eureka/
+  db:
+    image: mysql:5.7
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=58rjK[jP1
+      - MYSQL_USER=borz0y
+      - MYSQL_PASSWORD=58rjK[jP1
+      - MYSQL_DATABASE=atlas-bot
+
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8086:8080

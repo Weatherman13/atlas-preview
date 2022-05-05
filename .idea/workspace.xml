@@ -5,38 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="134960b3-c518-4df0-9750-b33e38ecc3f9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_retrofit2_converter_jackson_2_9_0.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/controller/TestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/dao/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/dao/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/dto/Currency.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/dto/CurrencyDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/dto/ExceptionDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/model/ExceptionDetailsModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/dto/FearAndGreed.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/dto/FearAndGreedDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/dto/FearAndGreedRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/dto/FearAndGreedResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/dto/MarketList.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/dto/MarketListDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/dto/Pair.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/dto/PairModelDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/dto/PairInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/dto/PairInfoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/entity/CurrencyInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/model/CurrencyModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/entity/Language.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/model/Language.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/entity/MarketCondition.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/model/FearAndGreedModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/entity/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/model/State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/exception/handler/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/exception/handler/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/CoinServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/CoinServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/MarketConditionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/MarketConditionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/MarketConditionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/MarketConditionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/telegram_handler/CallbackQueryFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/telegram_handler/CallbackQueryFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/telegram_handler/CommandFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/telegram_handler/CommandFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/telegram_handler/InformationFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/telegram_handler/InformationFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/telegram_handler/MarketFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/telegram_handler/MarketFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/telegram_handler/OptionsFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/telegram_handler/OptionsFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/dto/ExceptionDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/model/ExceptionDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/exception/handler/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/exception/handler/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,23 +73,23 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Weatherman/Documents/ProjectIdea/AtlasBot",
-    "nodejs_package_manager_path": "npm",
-    "spring.configuration.checksum": "8ba158bcaac33d86887243c76ed378c1"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Weatherman/Documents/ProjectIdea/AtlasBot&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;8ba158bcaac33d86887243c76ed378c1&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -257,7 +227,8 @@
       <workItem from="1651375701325" duration="36081000" />
       <workItem from="1651593356222" duration="16153000" />
       <workItem from="1651663883663" duration="17914000" />
-      <workItem from="1651692323573" duration="3748000" />
+      <workItem from="1651692323573" duration="4536000" />
+      <workItem from="1651752314415" duration="720000" />
     </task>
     <servers />
   </component>
