@@ -1,8 +1,8 @@
 package ru.thirteenth.kryptohouse.service;
 
-import ru.thirteenth.kryptohouse.dto.Currency;
-import ru.thirteenth.kryptohouse.dto.Pair;
-import ru.thirteenth.kryptohouse.dto.PairInfo;
+import ru.thirteenth.kryptohouse.dto.gateio.Currency;
+import ru.thirteenth.kryptohouse.dto.gateio.PairInfoDTO;
+import ru.thirteenth.model.PairModel;
 
 import java.net.URISyntaxException;
 import java.util.List;
@@ -16,5 +16,5 @@ public interface CoinInfoService {
 
     List<Currency> getPair(Map<String, String> pair) throws URISyntaxException;
 
-    PairInfo getPairInfo(Pair pair) throws URISyntaxException;
+    PairInfoDTO getPairInfo(PairModel pair) throws URISyntaxException;
 }

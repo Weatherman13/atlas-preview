@@ -16,7 +16,7 @@ import static ru.thirteenth.atlas.model.State.START;
 @NoArgsConstructor
 @Entity
 @Table(name = "user_atlas")
-public class User {
+public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -32,19 +32,19 @@ public class User {
     @Column(name = "language")
     private String language;
 
-    public User(long telegramId, String state, String username, String language) {
+    public UserEntity(long telegramId, String state, String username, String language) {
         this.telegramId = telegramId;
         this.state = state;
         this.username = username;
         this.language = language;
     }
 
-    public static User telegramUserMapper(org.telegram.telegrambots.meta.api.objects.User telegramUser) {
+    public static UserEntity telegramUserMapper(org.telegram.telegrambots.meta.api.objects.User telegramUser) {
 
         var telegramId = telegramUser.getId();
         var username = telegramUser.getUserName();
 
-        return new User(telegramId, START.toString(), username, Language.RU.toString() );
+        return new UserEntity(telegramId, START.toString(), username, Language.RU.toString() );
     }
 
     public ResourceBundle getResourceBundle() {

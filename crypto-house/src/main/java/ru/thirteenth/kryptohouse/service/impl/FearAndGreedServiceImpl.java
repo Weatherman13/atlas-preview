@@ -2,8 +2,8 @@ package ru.thirteenth.kryptohouse.service.impl;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import ru.thirteenth.kryptohouse.dto.FearAndGreed;
-import ru.thirteenth.kryptohouse.dto.FearAndGreedRequest;
+import ru.thirteenth.kryptohouse.dto.faq.FearAndGreed;
+import ru.thirteenth.kryptohouse.dto.faq.FearAndGreedRequest;
 import ru.thirteenth.kryptohouse.exception.FearAndGreedRequestIsEmptyException;
 import ru.thirteenth.kryptohouse.service.FearAndGreedIndexService;
 

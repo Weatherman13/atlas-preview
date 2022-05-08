@@ -39,8 +39,10 @@ public interface CurrencyDtoModelMapper {
     }
 
     default double stringToDouble(String string) {
-        if (string.contains(",")) return Double.parseDouble(string.replace(",", ""));
-        else return Double.parseDouble(string);
+        if (string.contains(",")) return Double.parseDouble(
+                string.replace(",", ""));
+        else return Double.parseDouble(
+                String.format("%.3f", Double.parseDouble(string.replace(" ", ""))));
     }
 
 //    CurrencyDTO currencyModelToDto(CurrencyModel currencyModel);

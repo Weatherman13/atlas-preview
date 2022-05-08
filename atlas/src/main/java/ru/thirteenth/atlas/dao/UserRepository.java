@@ -1,16 +1,16 @@
 package ru.thirteenth.atlas.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import ru.thirteenth.atlas.entity.User;
+import ru.thirteenth.atlas.entity.UserEntity;
 
-public interface UserRepository extends JpaRepository<User,Integer> {
+public interface UserRepository extends JpaRepository<UserEntity,Integer> {
 
     boolean existsUserByTelegramId(long TelegramMId);
 
-    User findUserByTelegramId(long TelegramId);
+    UserEntity findUserByTelegramId(long TelegramId);
 
 
-    User findUserByUsername (String username);
+    UserEntity findUserByUsername (String username);
 
 
 }

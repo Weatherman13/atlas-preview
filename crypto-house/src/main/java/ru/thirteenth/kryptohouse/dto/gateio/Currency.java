@@ -1,4 +1,4 @@
-package ru.thirteenth.kryptohouse.dto;
+package ru.thirteenth.kryptohouse.dto.gateio;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

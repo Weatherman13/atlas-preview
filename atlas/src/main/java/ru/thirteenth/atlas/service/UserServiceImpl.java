@@ -1,12 +1,11 @@
 package ru.thirteenth.atlas.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import ru.thirteenth.atlas.dao.UserRepository;
 import ru.thirteenth.atlas.model.Language;
 import ru.thirteenth.atlas.model.State;
-import ru.thirteenth.atlas.entity.User;
+import ru.thirteenth.atlas.entity.UserEntity;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -18,8 +17,8 @@ public class UserServiceImpl implements UserService {
         this.repository = repository;
     }
 
-    public void save(User user) {
-        repository.save(user);
+    public void save(UserEntity userEntity) {
+        repository.save(userEntity);
     }
 
     public void updateUserStateByTelegramId(long telegramId, State state) {
@@ -47,11 +46,11 @@ public class UserServiceImpl implements UserService {
         return repository.findUserByTelegramId(telegramId).getState();
     }
 
-    public User getUserByUsername(String username){
+    public UserEntity getUserByUsername(String username){
         return repository.findUserByUsername(username);
     }
 
-    public User getUserByTelegramId(long telegramId){
+    public UserEntity getUserByTelegramId(long telegramId){
         return repository.findUserByTelegramId(telegramId);
     }
 

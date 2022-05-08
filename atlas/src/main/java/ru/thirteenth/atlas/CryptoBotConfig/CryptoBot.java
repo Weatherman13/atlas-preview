@@ -2,7 +2,6 @@ package ru.thirteenth.atlas.CryptoBotConfig;
 
 import lombok.SneakyThrows;
 
-import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -10,7 +9,7 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import ru.thirteenth.atlas.service.ButtonFactoryService;
-import ru.thirteenth.atlas.service.CoinServiceImpl;
+import ru.thirteenth.atlas.service.CryptocurrencyInformationService;
 import ru.thirteenth.atlas.service.UserServiceImpl;
 import ru.thirteenth.atlas.telegram_handler.*;
 
@@ -27,7 +26,7 @@ public class CryptoBot extends TelegramLongPollingBot {
 
     private final CallbackQueryFacade callbackFacade;
 
-    private final CoinServiceImpl coinService;
+    private final CryptocurrencyInformationService cryptocurrencyInformationService;
 
     private final UserServiceImpl userService;
 
@@ -35,21 +34,23 @@ public class CryptoBot extends TelegramLongPollingBot {
 
     private final MarketFacade marketFacade;
 
+    private final СryptocurrencyFacade cryptoCurFacade;
 
 
     @Autowired
     public CryptoBot(OptionsFacade optionsFacade, CommandFacade commandFacade,
                      ButtonFactoryService buttonService, CallbackQueryFacade callbackFacade,
-                     CoinServiceImpl coinService, UserServiceImpl userService,
-                     InformationFacade informationFacade, MarketFacade marketFacade) {
+                     CryptocurrencyInformationService cryptocurrencyInformationService, UserServiceImpl userService,
+                     InformationFacade informationFacade, MarketFacade marketFacade, СryptocurrencyFacade cryptoCurFacade) {
         this.optionsFacade = optionsFacade;
         this.commandFacade = commandFacade;
         this.buttonService = buttonService;
         this.callbackFacade = callbackFacade;
-        this.coinService = coinService;
+        this.cryptocurrencyInformationService = cryptocurrencyInformationService;
         this.userService = userService;
         this.informationFacade = informationFacade;
         this.marketFacade = marketFacade;
+        this.cryptoCurFacade = cryptoCurFacade;
     }
 
     @Override
@@ -66,35 +67,9 @@ public class CryptoBot extends TelegramLongPollingBot {
     @SneakyThrows
     public void onUpdateReceived(Update update) {
 
-        if (update.hasMessage() && !update.getMessage().hasEntities() && userService.getStateUserById(update
-                .getMessage()
-                .getFrom()
-                .getId()).equals("COIN_INFO_MENU")) {
-            var coinInfo = coinService.getCoinInfo(update.getMessage().getText().toUpperCase());
-
-            if (!coinInfo.getSymbol().equals("nope"))
-                execute(SendMessage.builder()
-                        .chatId(update
-                                .getMessage()
-                                .getChatId()
-                                .toString())
-                        .text("Name: " + coinInfo.getName() + "\n" +
-                                "Symbol: " + coinInfo.getSymbol() + "\n" +
-                                "Rate: " + coinInfo.getRate()+" \uD83D\uDCB2" + "\n" +
-                                "Volatility: " + coinInfo.getVolA()+" \uD83D\uDCB2" + "\n" +
-                                "Rate percent: " + coinInfo.getRatePercent() + "\n" +
-                                "Trend: " + coinInfo.trendToString(coinInfo) + "\n" +
-                                "Marketcap: " + coinInfo.getMarketCup()+" \uD83D\uDCB2" + "\n" +
-                                "High: " + coinInfo.getHigh()+" \uD83D\uDCB2" + "\n" +
-                                "Low: " + coinInfo.getLow()+" \uD83D\uDCB2" + "\n\n\n" +
-                                "Note: Continue typing or go back")
-                        .replyMarkup(buttonService.getCoinInfoMenu())
-                        .build());
-            else execute(callbackFacade.getInvalidInputCoin(update.getMessage()));
-        }
 
 
-        if (update.hasCallbackQuery() ) {
+        if (update.hasCallbackQuery()) {
             var payLoad = update.getCallbackQuery().getData();
             var callBack = update.getCallbackQuery();
             System.out.println(payLoad);
@@ -112,49 +87,77 @@ public class CryptoBot extends TelegramLongPollingBot {
                     execute(callbackFacade.getMarketConditionMenu(callBack));
                     return;
                 }
-//                case "GetFaG": {
-//                    execute(callbackFacade.getFearAndGreed(callBack));
-//                    return;
-//                }
                 case "GetBackToMarketConditionMenu": {
                     execute(callbackFacade.getMarketConditionMenu(callBack));
                     return;
                 }
-                case "GetCryptocurrencies": {
-                    execute(callbackFacade.getСryptoCurrencyMenu(callBack));
+                case "GetCryptocurrenciesMenu": {
+                    execute(cryptoCurFacade.getСryptoCurrencyMenu(callBack));
                     return;
                 }
                 case "GetCoinInfo": {
-                    execute(callbackFacade.getCoinInfoMenu(callBack));
-                    return;
-                }
-                case "GetAvailableCryptocurrencies": {
-                    execute(callbackFacade.getAvailableCoin(callBack));
+                    execute(cryptoCurFacade.getCoinInfoMenu(callBack));
                     return;
                 }
                 case "GetLanguageOption": {
                     execute(optionsFacade.getOptionLanguageMenu(callBack));
                     return;
                 }
-                case "SetRuLanguage":{
+                case "SetRuLanguage": {
                     execute(optionsFacade.setRuLanguage(callBack));
                     return;
                 }
-                case "SetEnLanguage":{
+                case "SetEnLanguage": {
                     execute(optionsFacade.setEnLanguage(callBack));
                     return;
                 }
 
-                case "GetOptionMenu":{
+                case "GetOptionMenu": {
                     execute(optionsFacade.getOptionMenu(callBack));
                     return;
                 }
-                case "GetTop15Cap":{
+                case "GetTop15Cap": {
                     execute(marketFacade.getTop15(callBack));
                     return;
                 }
-                case "GetFaQ":{
+                case "GetFaQ": {
                     execute(marketFacade.getFearAndGreed(callBack));
+                    return;
+                }
+                case "GetSuffixPatternCoinInfo": {
+                    execute(cryptoCurFacade.getCoinInfoPattern(callBack));
+                    return;
+                }
+                case "GetNamePatternCoinInfo": {
+                    execute(cryptoCurFacade.getCoinInfoPattern(callBack));
+                    return;
+                }
+                case "GetCoinConverter": {
+                    execute(cryptoCurFacade.getСryptocurrencyConvertatorMenu(callBack));
+                    return;
+                }
+                case "GetCryptoToFiat": {
+                    execute(cryptoCurFacade.getCryptoToFiatConverterMenu(callBack));
+                    return;
+                }
+                case "GetCryptoToUSD": {
+                    execute(cryptoCurFacade.getCryptoToFiatSelectUsd(callBack));
+                    return;
+                }
+                case "GetCryptoToRUB": {
+                    execute(cryptoCurFacade.getCryptoToFiatSelectRub(callBack));
+                    return;
+                }
+                case "GetFiatToCrypto": {
+                    execute(cryptoCurFacade.getFiatToCryptoConverterMenu(callBack));
+                    return;
+                }
+                case "GetUSDToCrypto": {
+                    execute(cryptoCurFacade.getFiatToCryptoSelectUsd(callBack));
+                    return;
+                }
+                case "GetRUBToCrypto": {
+                    execute(cryptoCurFacade.getFiatToCryptoSelectRub(callBack));
                     return;
                 }
 
@@ -162,10 +165,10 @@ public class CryptoBot extends TelegramLongPollingBot {
             }
         }
 
-        if (update.hasMessage() && update.getMessage().hasText() ) {
+        if (update.hasMessage() && update.getMessage().hasText()) {
             Message message = update.getMessage();
 
-            switch (message.getText()){
+            switch (message.getText()) {
                 case "\uD83D\uDDD2Information": {
                     execute(informationFacade.getInfo(message));
                     return;
@@ -174,7 +177,7 @@ public class CryptoBot extends TelegramLongPollingBot {
                     execute(informationFacade.getInfo(message));
                     return;
                 }
-                case  "⚙️Settings": {
+                case "⚙️Settings": {
                     execute(optionsFacade.getOptionMenu(message));
                     return;
                 }
@@ -182,15 +185,25 @@ public class CryptoBot extends TelegramLongPollingBot {
                     execute(optionsFacade.getOptionMenu(message));
                     return;
                 }
-                case "\uD83C\uDFDBMarket":{
+                case "\uD83C\uDFDBMarket": {
                     execute(marketFacade.getMarketMenu(message));
                     return;
                 }
-                case "\uD83C\uDFDBРынок":{
+                case "\uD83C\uDFDBРынок": {
                     execute(marketFacade.getMarketMenu(message));
+                    return;
+                }
+                case "₿ Сryptocurrency": {
+                    execute(cryptoCurFacade.getСryptoCurrencyMenu(message));
+                    return;
+                }
+                case "₿ Криптовалюта": {
+                    execute(cryptoCurFacade.getСryptoCurrencyMenu(message));
                     return;
                 }
             }
+
+
 
             if (message.hasEntities()) {
 
@@ -240,6 +253,46 @@ public class CryptoBot extends TelegramLongPollingBot {
                     }
 
                 }
+            }
+
+
+
+            if (update.hasMessage() && !update.getMessage().hasEntities()) {
+                var user = update.getMessage().getFrom();
+                var userTelegramId = user.getId();
+                var userState = userService.getStateUserById(userTelegramId);
+
+                switch (userState){
+                    case "COIN_INFO_NAME_PATTERN": {
+                        execute(cryptoCurFacade.getCryptocurrencyInfoByName(message));
+                        return;
+                    }
+                    case "COIN_INFO_SUFFIX_PATTERN": {
+                        execute(cryptoCurFacade.getCryptocurrencyInfoBySuffix(message));
+                        return;
+                    }
+                    case "CRYPTO_TO_FIAT_SELECT_RUB": {
+                        System.out.println(message.getText() + "rub");
+                        execute(cryptoCurFacade.getConvertCryptocurrencyToCurrency(message));
+                        return;
+                    }
+                    case "CRYPTO_TO_FIAT_SELECT_USD": {
+                        System.out.println(message.getText() + "usd");
+                        execute(cryptoCurFacade.getConvertCryptocurrencyToCurrency(message));
+                        return;
+                    }
+                    case "FIAT_TO_CRYPTO_SELECT_USD": {
+                        System.out.println(message.getText() + "usd");
+                        execute(cryptoCurFacade.getConvertCurrencyToCryptocurrency(message));
+                        return;
+                    }
+                    case "FIAT_TO_CRYPTO_SELECT_RUB": {
+                        System.out.println(message.getText() + "rub");
+                        execute(cryptoCurFacade.getConvertCurrencyToCryptocurrency(message));
+                        return;
+                    }
+                }
+//
             }
         }
 

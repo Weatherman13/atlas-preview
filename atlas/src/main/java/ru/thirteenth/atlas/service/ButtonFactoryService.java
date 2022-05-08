@@ -8,7 +8,6 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKe
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardButton;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
 
-import java.io.UnsupportedEncodingException;
 import java.util.*;
 
 @Service
@@ -147,27 +146,34 @@ public class ButtonFactoryService {
         return InlineKeyboardMarkup.builder().keyboard(middleButtons).keyboardRow(backButtons).build();
     }
 
-    public InlineKeyboardMarkup getCoinInfoMenu() {
+    public InlineKeyboardMarkup getCoinInfoMenu(ResourceBundle bundle) {
         List<InlineKeyboardButton> backButtons = new ArrayList<>();
         List<List<InlineKeyboardButton>> middleButtons = new ArrayList<>();
 
-        var availableCoinButton =
+        var nameCoinButton =
                 InlineKeyboardButton
                         .builder()
-                        .text("Available сryptocurrencies")
-                        .callbackData("GetAvailableCryptocurrencies")
+                        .text(bundle.getString("namePatternCoinInfoButton"))
+                        .callbackData("GetNamePatternCoinInfo")
+                        .build();
+
+        var suffixCoinButton =
+                InlineKeyboardButton
+                        .builder()
+                        .text(bundle.getString("suffixPatternCoinInfoButton"))
+                        .callbackData("GetSuffixPatternCoinInfo")
                         .build();
 
 
         var backButton =
                 InlineKeyboardButton
                         .builder()
-                        .text("Back")
-                        .callbackData("GetCryptocurrencies")
+                        .text(bundle.getString("BackButton"))
+                        .callbackData("GetCryptocurrenciesMenu")
                         .build();
 
         backButtons.add(backButton);
-        middleButtons.add(Arrays.asList(availableCoinButton));
+        middleButtons.add(Arrays.asList(nameCoinButton,suffixCoinButton));
 
         return InlineKeyboardMarkup.builder().keyboard(middleButtons).keyboardRow(backButtons).build();
     }
@@ -265,6 +271,31 @@ public class ButtonFactoryService {
         return InlineKeyboardMarkup.builder().keyboard(middleButtons).keyboardRow(backButtons).build();
     }
 
+    public InlineKeyboardMarkup getStartOptionLanguageMenu(ResourceBundle bundle){
+        List<List<InlineKeyboardButton>> middleButtons = new ArrayList<>();
+
+
+
+        var ruButton =
+                InlineKeyboardButton
+                        .builder()
+                        .text(bundle.getString("RuLanguageButton"))
+                        .callbackData("SetRuLanguage")
+                        .build();
+        var enButton =
+                InlineKeyboardButton
+                        .builder()
+                        .text(bundle.getString("EnLanguageButton"))
+                        .callbackData("SetEnLanguage")
+                        .build();
+
+
+        middleButtons.add(Arrays.asList(enButton,ruButton));
+
+        return InlineKeyboardMarkup.builder().keyboard(middleButtons).build();
+    }
+
+
 
     public InlineKeyboardMarkup getMarketMenu(ResourceBundle bundle){
 
@@ -290,4 +321,347 @@ public class ButtonFactoryService {
 
         return InlineKeyboardMarkup.builder().keyboard(middleButtons).build();
     }
+
+    public InlineKeyboardMarkup getСryptoсurrencyMenu(ResourceBundle bundle){
+
+        List<InlineKeyboardButton> middleButtons1 = new ArrayList<>();
+        List<InlineKeyboardButton> middleButtons2 = new ArrayList<>();
+
+
+        var coinInfoButton =
+                InlineKeyboardButton
+                        .builder()
+                        .text(bundle.getString("CoinInfoButton"))
+                        .callbackData("GetCoinInfo")
+                        .build();
+
+        var coinConverterButton =
+                InlineKeyboardButton
+                        .builder()
+                        .text(bundle.getString("CoinConverterButton"))
+                        .callbackData("GetCoinConverter")
+                        .build();
+
+
+
+
+        middleButtons1.add(coinInfoButton);
+        middleButtons2.add(coinConverterButton);
+
+        return InlineKeyboardMarkup.builder().keyboardRow(middleButtons1).keyboardRow(middleButtons2).build();
+    }
+    public InlineKeyboardMarkup getBackToCoinInfoMenu(ResourceBundle bundle){
+
+        List<List<InlineKeyboardButton>> middleButtons = new ArrayList<>();
+
+
+        var backToCoinInfoButton =
+                InlineKeyboardButton
+                        .builder()
+                        .text(bundle.getString("BackButton"))
+                        .callbackData("GetCoinInfo")
+                        .build();
+
+
+
+
+        middleButtons.add(Arrays.asList(backToCoinInfoButton));
+
+        return InlineKeyboardMarkup.builder().keyboard(middleButtons).build();
+    }
+
+    public InlineKeyboardMarkup getСryptocurrencyConvertatorMenu(ResourceBundle bundle){
+
+        List<InlineKeyboardButton> middleButtons1 = new ArrayList<>();
+        List<InlineKeyboardButton> middleButtons2 = new ArrayList<>();
+        List<InlineKeyboardButton> backButtons3 = new ArrayList<>();
+
+
+        var toFiatButton =
+                InlineKeyboardButton
+                        .builder()
+                        .text(bundle.getString("ToFiatButton"))
+                        .callbackData("GetCryptoToFiat")
+                        .build();
+
+        var toCryptocurrencyButton =
+                InlineKeyboardButton
+                        .builder()
+                        .text(bundle.getString("ToCryptoButton"))
+                        .callbackData("GetFiatToCrypto")
+                        .build();
+
+        var backCoinConverterButton =
+                InlineKeyboardButton
+                        .builder()
+                        .text(bundle.getString("BackButton"))
+                        .callbackData("GetCryptocurrenciesMenu")
+                        .build();
+
+
+
+
+        middleButtons1.add(toFiatButton);
+        middleButtons2.add(toCryptocurrencyButton);
+        backButtons3.add(backCoinConverterButton);
+
+        return InlineKeyboardMarkup.builder()
+                .keyboardRow(middleButtons1)
+                .keyboardRow(middleButtons2)
+                .keyboardRow(backButtons3)
+                .build();
+    }
+    public InlineKeyboardMarkup getCryptoToFiatConverterMenu(ResourceBundle bundle){
+
+        List<InlineKeyboardButton> middleButtons1 = new ArrayList<>();
+        List<InlineKeyboardButton> middleButtons2 = new ArrayList<>();
+        List<InlineKeyboardButton> backButtons3 = new ArrayList<>();
+
+
+        var toFiatButton =
+                InlineKeyboardButton
+                        .builder()
+                        .text("RUB")
+                        .callbackData("GetCryptoToRUB")
+                        .build();
+
+        var toCryptocurrencyButton =
+                InlineKeyboardButton
+                        .builder()
+                        .text("USD")
+                        .callbackData("GetCryptoToUSD")
+                        .build();
+
+        var backCoinConverterButton =
+                InlineKeyboardButton
+                        .builder()
+                        .text(bundle.getString("BackButton"))
+                        .callbackData("GetCoinConverter")
+                        .build();
+
+
+
+
+        middleButtons1.add(toFiatButton);
+        middleButtons2.add(toCryptocurrencyButton);
+        backButtons3.add(backCoinConverterButton);
+
+        return InlineKeyboardMarkup.builder()
+                .keyboardRow(middleButtons1)
+                .keyboardRow(middleButtons2)
+                .keyboardRow(backButtons3)
+                .build();
+    }
+
+
+    public InlineKeyboardMarkup getCryptoToFiatConverterMenuSelectUsd(ResourceBundle bundle){
+
+        List<InlineKeyboardButton> middleButtons1 = new ArrayList<>();
+        List<InlineKeyboardButton> middleButtons2 = new ArrayList<>();
+        List<InlineKeyboardButton> backButtons3 = new ArrayList<>();
+
+
+        var toFiatButton =
+                InlineKeyboardButton
+                        .builder()
+                        .text("RUB")
+                        .callbackData("GetCryptoToRUB")
+                        .build();
+
+        var toCryptocurrencyButton =
+                InlineKeyboardButton
+                        .builder()
+                        .text("USD ✔️")
+                        .callbackData("GetCryptoToUSD")
+                        .build();
+
+        var backCoinConverterButton =
+                InlineKeyboardButton
+                        .builder()
+                        .text(bundle.getString("BackButton"))
+                        .callbackData("GetCoinConverter")
+                        .build();
+
+
+
+
+        middleButtons1.add(toFiatButton);
+        middleButtons2.add(toCryptocurrencyButton);
+        backButtons3.add(backCoinConverterButton);
+
+        return InlineKeyboardMarkup.builder()
+                .keyboardRow(middleButtons1)
+                .keyboardRow(middleButtons2)
+                .keyboardRow(backButtons3)
+                .build();
+    }
+
+    public InlineKeyboardMarkup getCryptoToFiatConverterMenuSelectRub(ResourceBundle bundle){
+
+        List<InlineKeyboardButton> middleButtons1 = new ArrayList<>();
+        List<InlineKeyboardButton> middleButtons2 = new ArrayList<>();
+        List<InlineKeyboardButton> backButtons3 = new ArrayList<>();
+
+
+        var toFiatButton =
+                InlineKeyboardButton
+                        .builder()
+                        .text("RUB ✔️")
+                        .callbackData("GetCryptoToRUB")
+                        .build();
+
+        var toCryptocurrencyButton =
+                InlineKeyboardButton
+                        .builder()
+                        .text("USD")
+                        .callbackData("GetCryptoToUSD")
+                        .build();
+
+        var backCoinConverterButton =
+                InlineKeyboardButton
+                        .builder()
+                        .text(bundle.getString("BackButton"))
+                        .callbackData("GetCoinConverter")
+                        .build();
+
+
+
+
+        middleButtons1.add(toFiatButton);
+        middleButtons2.add(toCryptocurrencyButton);
+        backButtons3.add(backCoinConverterButton);
+
+        return InlineKeyboardMarkup.builder()
+                .keyboardRow(middleButtons1)
+                .keyboardRow(middleButtons2)
+                .keyboardRow(backButtons3)
+                .build();
+    }
+
+    public InlineKeyboardMarkup getFiatToCryptoConverterMenu(ResourceBundle bundle){
+
+        List<InlineKeyboardButton> middleButtons1 = new ArrayList<>();
+        List<InlineKeyboardButton> middleButtons2 = new ArrayList<>();
+        List<InlineKeyboardButton> backButtons3 = new ArrayList<>();
+
+
+        var toFiatButton =
+                InlineKeyboardButton
+                        .builder()
+                        .text("RUB")
+                        .callbackData("GetRUBToCrypto")
+                        .build();
+
+        var toCryptocurrencyButton =
+                InlineKeyboardButton
+                        .builder()
+                        .text("USD")
+                        .callbackData("GetUSDToCrypto")
+                        .build();
+
+        var backCoinConverterButton =
+                InlineKeyboardButton
+                        .builder()
+                        .text(bundle.getString("BackButton"))
+                        .callbackData("GetCoinConverter")
+                        .build();
+
+
+
+
+        middleButtons1.add(toFiatButton);
+        middleButtons2.add(toCryptocurrencyButton);
+        backButtons3.add(backCoinConverterButton);
+
+        return InlineKeyboardMarkup.builder()
+                .keyboardRow(middleButtons1)
+                .keyboardRow(middleButtons2)
+                .keyboardRow(backButtons3)
+                .build();
+    }
+
+    public InlineKeyboardMarkup getFiatToCryptoConverterMenuSelectUsd(ResourceBundle bundle){
+
+        List<InlineKeyboardButton> middleButtons1 = new ArrayList<>();
+        List<InlineKeyboardButton> middleButtons2 = new ArrayList<>();
+        List<InlineKeyboardButton> backButtons3 = new ArrayList<>();
+
+
+        var toRubButton =
+                InlineKeyboardButton
+                        .builder()
+                        .text("RUB")
+                        .callbackData("GetRUBToCrypto")
+                        .build();
+
+        var toUsdButton =
+                InlineKeyboardButton
+                        .builder()
+                        .text("USD ✔️")
+                        .callbackData("GetUSDToCrypto")
+                        .build();
+
+        var backCoinConverterButton =
+                InlineKeyboardButton
+                        .builder()
+                        .text(bundle.getString("BackButton"))
+                        .callbackData("GetCoinConverter")
+                        .build();
+
+
+
+
+        middleButtons1.add(toRubButton);
+        middleButtons2.add(toUsdButton);
+        backButtons3.add(backCoinConverterButton);
+
+        return InlineKeyboardMarkup.builder()
+                .keyboardRow(middleButtons1)
+                .keyboardRow(middleButtons2)
+                .keyboardRow(backButtons3)
+                .build();
+    }
+
+    public InlineKeyboardMarkup getFiatToCryptoConverterMenuSelectRub(ResourceBundle bundle){
+
+        List<InlineKeyboardButton> middleButtons1 = new ArrayList<>();
+        List<InlineKeyboardButton> middleButtons2 = new ArrayList<>();
+        List<InlineKeyboardButton> backButtons3 = new ArrayList<>();
+
+
+        var toRubButton =
+                InlineKeyboardButton
+                        .builder()
+                        .text("RUB ✔️")
+                        .callbackData("GetRUBToCrypto")
+                        .build();
+
+        var toUsdButton =
+                InlineKeyboardButton
+                        .builder()
+                        .text("USD")
+                        .callbackData("GetUSDToCrypto")
+                        .build();
+
+        var backCoinConverterButton =
+                InlineKeyboardButton
+                        .builder()
+                        .text(bundle.getString("BackButton"))
+                        .callbackData("GetCoinConverter")
+                        .build();
+
+
+
+
+        middleButtons1.add(toRubButton);
+        middleButtons2.add(toUsdButton);
+        backButtons3.add(backCoinConverterButton);
+
+        return InlineKeyboardMarkup.builder()
+                .keyboardRow(middleButtons1)
+                .keyboardRow(middleButtons2)
+                .keyboardRow(backButtons3)
+                .build();
+    }
+
 }

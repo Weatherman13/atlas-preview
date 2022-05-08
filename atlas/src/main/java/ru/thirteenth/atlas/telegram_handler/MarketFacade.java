@@ -67,7 +67,8 @@ public class MarketFacade {
 
         return SendMessage.builder()
                 .chatId(callback.getMessage().getChatId().toString())
-                .text( " 1. " + currencyList.get(0).getSymbol() +
+                .text( bundle.getString("Top15Header") + "\n\n" +
+                        " 1. " + currencyList.get(0).getSymbol() +
                         ":  " + currencyList.get(0).getMarketCupS() + "\uD83D\uDCB2" + "\n" +
                         " 2. " + currencyList.get(1).getSymbol() +
                         ":  " + currencyList.get(1).getMarketCupS() + "\uD83D\uDCB2" + "\n" +
@@ -97,7 +98,7 @@ public class MarketFacade {
                         ":  " + currencyList.get(13).getMarketCupS() + "\uD83D\uDCB2" + "\n" +
                         "15. " + currencyList.get(14).getSymbol() +
                         ":  " + currencyList.get(14).getMarketCupS() + "\uD83D\uDCB2" + "\n" + "\n" +
-                        "NOTE: USDT, USDC, UST are not included in the top.")
+                        bundle.getString("Top15Tail"))
                 .replyMarkup(buttonService.getMarketMenu(bundle))
                 .build();
     }

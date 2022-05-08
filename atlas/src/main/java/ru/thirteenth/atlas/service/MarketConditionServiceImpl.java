@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 @Service
 public class MarketConditionServiceImpl implements MarketConditionService {
 
-    private final String CRYPTO_HOUSE_SERVICE = "http://cryptohouse/";
+    private final String CRYPTO_HOUSE_SERVICE = "http://cryptohouse/api-v1/gate-io/";
     private final RestTemplate restTemplate;
 
 
@@ -41,14 +41,13 @@ public class MarketConditionServiceImpl implements MarketConditionService {
 
     public List<CurrencyModel> getTopCurrency() throws URISyntaxException {
         var responseTop =
-                restTemplate.getForEntity(new URI(CRYPTO_HOUSE_SERVICE + "coin-all"), MarketListDTO.class);
+                restTemplate.getForEntity(new URI(CRYPTO_HOUSE_SERVICE + "cryptocurrency-pair"), MarketListDTO.class);
 
         return responseTop
                 .getBody()
                 .getMarketList()
                 .stream()
                 .map(obj -> CurrencyDtoModelMapper.INSTANCE.currencyDtoToModel(obj))
-//                .map(CurrencyModel::currencyHandler)
                 .filter(cur -> cur.getPairModel().getCurrencyB().equals("USDT"))
                 .sorted(Comparator.comparing(CurrencyModel::getMarketCup).reversed())
                 .limit(15)

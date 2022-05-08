@@ -3,18 +3,16 @@ package ru.thirteenth.kryptohouse.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import ru.thirteenth.kryptohouse.dto.Currency;
-import ru.thirteenth.kryptohouse.dto.MarketList;
-import ru.thirteenth.kryptohouse.dto.Pair;
-import ru.thirteenth.kryptohouse.dto.PairInfo;
+import ru.thirteenth.kryptohouse.dto.gateio.Currency;
+import ru.thirteenth.kryptohouse.dto.gateio.MarketList;
+import ru.thirteenth.kryptohouse.dto.gateio.PairInfoDTO;
+import ru.thirteenth.kryptohouse.exception.PairDoesNotExistException;
 import ru.thirteenth.kryptohouse.service.CoinInfoService;
+import ru.thirteenth.model.PairModel;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -22,6 +20,7 @@ public class CoinInfoServiceImpl implements CoinInfoService {
     private final String MARKET_LIST_END = "https://data.gateapi.io/api2/1/marketlist";
 
     private final String CURRENCY_PAIR_END = "https://data.gateapi.io/api2/1/ticker/";
+
 
     private final RestTemplate restTemplate;
 
@@ -65,13 +64,17 @@ public class CoinInfoServiceImpl implements CoinInfoService {
     }
 
     @Override
-    public PairInfo getPairInfo(Pair pair) throws URISyntaxException {
+    public PairInfoDTO getPairInfo(PairModel pair) throws URISyntaxException {
         var response =
                 restTemplate.getForEntity(new URI(CURRENCY_PAIR_END)
-                        + pair.getCurrencyA().toLowerCase()
+                        + pair.getCur1()
                         +"_"
-                        + pair.getCurrencyB().toLowerCase(), PairInfo.class);
+                        + pair.getCur2(), PairInfoDTO.class);
+        if (response.getBody().getResult() == null)
+            throw new PairDoesNotExistException("This currency pair does not exist");
 
         return response.getBody();
     }
+
+
 }

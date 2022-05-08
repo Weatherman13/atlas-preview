@@ -1,9 +1,9 @@
-package ru.thirteenth.kryptohouse.dto;
+package ru.thirteenth.kryptohouse.dto.gateio;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
-import lombok.Value;
+import ru.thirteenth.kryptohouse.dto.gateio.Currency;
 
 import java.util.List;
 

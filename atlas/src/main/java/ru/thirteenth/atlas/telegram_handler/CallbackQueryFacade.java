@@ -4,10 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
-import org.telegram.telegrambots.meta.api.objects.Message;
 import ru.thirteenth.atlas.model.State;
 import ru.thirteenth.atlas.service.ButtonFactoryService;
-import ru.thirteenth.atlas.service.CoinServiceImpl;
+import ru.thirteenth.atlas.service.CryptocurrencyInformationService;
 import ru.thirteenth.atlas.service.MarketConditionServiceImpl;
 import ru.thirteenth.atlas.service.UserServiceImpl;
 
@@ -19,11 +18,11 @@ public class CallbackQueryFacade {
     private final ButtonFactoryService buttonService;
     private final UserServiceImpl userService;
 
-    private final CoinServiceImpl coinService;
+    private final CryptocurrencyInformationService coinService;
 
     @Autowired
     public CallbackQueryFacade(MarketConditionServiceImpl marketConditionService
-            , ButtonFactoryService buttonService, UserServiceImpl userService, CoinServiceImpl coinService) {
+            , ButtonFactoryService buttonService, UserServiceImpl userService, CryptocurrencyInformationService coinService) {
         this.marketConditionService = marketConditionService;
         this.buttonService = buttonService;
         this.userService = userService;
@@ -140,36 +139,36 @@ public class CallbackQueryFacade {
                 .build();
     }
 
-    public SendMessage getCoinInfoMenu(CallbackQuery callback){
-        var userTelegramId = callback.getFrom().getId();
+//    public SendMessage getCoinInfoMenu(CallbackQuery callback){
+//        var userTelegramId = callback.getFrom().getId();
+//
+//        userService.updateUserStateByTelegramId(userTelegramId, State.COIN_INFO_MENU);
+//
+//        return SendMessage.builder()
+//                .chatId(callback.getMessage().getChatId().toString())
+//                .text("COIN INFORMATION MENU \n\n" + "Enter the name of the cryptocurrency, please")
+//                .replyMarkup(buttonService.getCoinInfoMenu())
+//                .build();
+//    }
 
-        userService.updateUserStateByTelegramId(userTelegramId, State.COIN_INFO_MENU);
-
-        return SendMessage.builder()
-                .chatId(callback.getMessage().getChatId().toString())
-                .text("COIN INFORMATION MENU \n\n" + "Enter the name of the cryptocurrency, please")
-                .replyMarkup(buttonService.getCoinInfoMenu())
-                .build();
-    }
-
-    public SendMessage getAvailableCoin(CallbackQuery callback) throws URISyntaxException {
-
-        return SendMessage.builder()
-                .chatId(callback.getMessage().getChatId().toString())
-                .text(coinService.getAllCoin().toString())
-                .replyMarkup(buttonService.getCoinInfoMenu())
-                .build();
-    }
+//    public SendMessage getAvailableCoin(CallbackQuery callback) throws URISyntaxException {
+//
+//        return SendMessage.builder()
+//                .chatId(callback.getMessage().getChatId().toString())
+//                .text(coinService.getAllCoin().toString())
+//                .replyMarkup(buttonService.getCoinInfoMenu())
+//                .build();
+//    }
 
     // TODO: 5/1/2022 Перенести в другое место, тут не должно быть сообщений
-    public SendMessage getInvalidInputCoin(Message message)  {
-
-        return SendMessage.builder()
-                .chatId(message.getChatId().toString())
-                .text("Invalid input, try again.")
-                .replyMarkup(buttonService.getCoinInfoMenu())
-                .build();
-    }
+//    public SendMessage getInvalidInputCoin(Message message)  {
+//
+//        return SendMessage.builder()
+//                .chatId(message.getChatId().toString())
+//                .text("Invalid input, try again.")
+//                .replyMarkup(buttonService.getCoinInfoMenu())
+//                .build();
+//    }
 
 
 
