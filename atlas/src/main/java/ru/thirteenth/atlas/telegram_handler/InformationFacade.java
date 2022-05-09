@@ -1,5 +1,6 @@
 package ru.thirteenth.atlas.telegram_handler;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -10,16 +11,11 @@ import ru.thirteenth.atlas.service.ButtonFactoryService;
 import ru.thirteenth.atlas.service.UserServiceImpl;
 
 @Component
+@RequiredArgsConstructor
 public class InformationFacade {
     private final UserServiceImpl userService;
 
     private final ButtonFactoryService buttonService;
-
-    @Autowired
-    public InformationFacade(UserServiceImpl userService, ButtonFactoryService buttonService) {
-        this.userService = userService;
-        this.buttonService = buttonService;
-    }
 
     public SendMessage getInfo(Message message){
         var userTelegramId = message.getFrom().getId();

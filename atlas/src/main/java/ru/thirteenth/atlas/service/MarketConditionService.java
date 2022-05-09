@@ -9,5 +9,5 @@ public interface MarketConditionService {
 
 
 
-    public FearAndGreedModel getMarketCondition() throws URISyntaxException;
+    public FearAndGreedModel getFearAndGreedIndex() throws URISyntaxException;
 }

@@ -1,7 +1,9 @@
 package ru.thirteenth.atlas.CryptoBotConfig;
 
+import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -15,6 +17,8 @@ import ru.thirteenth.atlas.telegram_handler.*;
 
 
 @Component
+@RequiredArgsConstructor
+@Slf4j
 public class CryptoBot extends TelegramLongPollingBot {
     private final String BOT_TOKEN = "5304189702:AAHZQMFiaH0zU_XZy9IYb37G_t8oMHCV6Lc";
     private final String BOT_USERNAME = "atlas_syndicate_bot";
@@ -37,22 +41,6 @@ public class CryptoBot extends TelegramLongPollingBot {
     private final СryptocurrencyFacade cryptoCurFacade;
 
 
-    @Autowired
-    public CryptoBot(OptionsFacade optionsFacade, CommandFacade commandFacade,
-                     ButtonFactoryService buttonService, CallbackQueryFacade callbackFacade,
-                     CryptocurrencyInformationService cryptocurrencyInformationService, UserServiceImpl userService,
-                     InformationFacade informationFacade, MarketFacade marketFacade, СryptocurrencyFacade cryptoCurFacade) {
-        this.optionsFacade = optionsFacade;
-        this.commandFacade = commandFacade;
-        this.buttonService = buttonService;
-        this.callbackFacade = callbackFacade;
-        this.cryptocurrencyInformationService = cryptocurrencyInformationService;
-        this.userService = userService;
-        this.informationFacade = informationFacade;
-        this.marketFacade = marketFacade;
-        this.cryptoCurFacade = cryptoCurFacade;
-    }
-
     @Override
     public String getBotToken() {
         return BOT_TOKEN;
@@ -72,7 +60,9 @@ public class CryptoBot extends TelegramLongPollingBot {
         if (update.hasCallbackQuery()) {
             var payLoad = update.getCallbackQuery().getData();
             var callBack = update.getCallbackQuery();
-            System.out.println(payLoad);
+            var userId = callBack.getFrom().getId();
+
+            log.debug("User: " + userId + ", sent a callback: " + payLoad );
 
             switch (payLoad) {
                 case "GetInfo": {
@@ -220,15 +210,6 @@ public class CryptoBot extends TelegramLongPollingBot {
                     switch (command) {
                         case "/start": {
                             execute(commandFacade.start(message));
-                            return;
-                        }
-                        case "/check_market_condition": {
-                            execute(commandFacade.checkMarketCondition(message));
-                            return;
-                        }
-                        case "/get_top15": {
-
-                            execute(commandFacade.getTop15(message));
                             return;
                         }
                         case "/test_button": {

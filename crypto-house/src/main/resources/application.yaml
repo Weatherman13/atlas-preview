@@ -13,3 +13,8 @@ spring:
     loadbalancer:
       ribbon:
         enabled: false
+logging:
+  level:
+    ru:
+      thirteenth:
+        DEBUG

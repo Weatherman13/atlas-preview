@@ -23,9 +23,9 @@ public class СryptocurrencyFacade {
 
     private final CryptocurrencyInformationService cryptocurrencyInformationService;
 
-    private final RubConvertorServiceImpl rubConvertorService;
+    private final RubConvertorService rubConvertorService;
 
-    private final UsdConvertorServiceImpl usdConvertorService;
+    private final UsdConvertorService usdConvertorService;
 
     public SendMessage getСryptoCurrencyMenu(Message message) {
         var userTelegramId = message.getFrom().getId();

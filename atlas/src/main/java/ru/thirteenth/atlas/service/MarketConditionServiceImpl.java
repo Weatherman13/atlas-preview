@@ -1,6 +1,9 @@
 package ru.thirteenth.atlas.service;
 
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import ru.thirteenth.atlas.dto.FearAndGreedDTO;
@@ -16,42 +19,60 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@RequiredArgsConstructor
+@Slf4j
 public class MarketConditionServiceImpl implements MarketConditionService {
 
     private final String CRYPTO_HOUSE_SERVICE = "http://cryptohouse/api-v1/gate-io/";
     private final RestTemplate restTemplate;
 
 
-    @Autowired
-    public MarketConditionServiceImpl(RestTemplate restTemplate) {
-        this.restTemplate = restTemplate;
+
+    public FearAndGreedModel getFearAndGreedIndex() {
+        ResponseEntity<FearAndGreedDTO> responseFnG =
+                null;
+        log.debug("Getting the Fear and Greed Index : STARTED");
+        try {
+            responseFnG = restTemplate.getForEntity(new URI(CRYPTO_HOUSE_SERVICE + "fng"), FearAndGreedDTO.class);
+
+
+            var fng = responseFnG.getBody();
+
+            var valueFnG = Integer.valueOf(fng.getValue());
+            var valueClassification = fng.getValueClassification();
+
+            log.debug("Getting the Fear and Greed Index : SUCCESSFUL");
+
+            return new FearAndGreedModel(valueFnG, valueClassification);
+        } catch (URISyntaxException e) {
+
+            log.debug("Getting the Fear and Greed Index : FAILED");
+            throw new RuntimeException("Endpoint is invalid");
+        }
     }
 
-    public FearAndGreedModel getMarketCondition() throws URISyntaxException {
-        var responseFnG =
-                restTemplate.getForEntity(new URI(CRYPTO_HOUSE_SERVICE + "fng"), FearAndGreedDTO.class);
+    public List<CurrencyModel> getTopCurrency() {
+        ResponseEntity<MarketListDTO> responseTop =
+                null;
+        log.debug("Getting the Top cap. 15 : STARTED");
+        try {
+            responseTop = restTemplate.getForEntity(new URI(CRYPTO_HOUSE_SERVICE + "cryptocurrency-pair"), MarketListDTO.class);
 
-        var fng = responseFnG.getBody();
+            log.debug("Getting the Top cap. 15 : SUCCESSFUL");
 
-        var valueFnG = Integer.valueOf(fng.getValue());
-        var valueClassification = fng.getValueClassification();
+            return responseTop
+                    .getBody()
+                    .getMarketList()
+                    .stream()
+                    .map(obj -> CurrencyDtoModelMapper.INSTANCE.currencyDtoToModel(obj))
+                    .filter(cur -> cur.getPairModel().getCurrencyB().equals("USDT"))
+                    .sorted(Comparator.comparing(CurrencyModel::getMarketCup).reversed())
+                    .limit(15)
+                    .collect(Collectors.toList());
+        } catch (URISyntaxException e) {
 
-        return new FearAndGreedModel(valueFnG, valueClassification);
-    }
-
-    public List<CurrencyModel> getTopCurrency() throws URISyntaxException {
-        var responseTop =
-                restTemplate.getForEntity(new URI(CRYPTO_HOUSE_SERVICE + "cryptocurrency-pair"), MarketListDTO.class);
-
-        return responseTop
-                .getBody()
-                .getMarketList()
-                .stream()
-                .map(obj -> CurrencyDtoModelMapper.INSTANCE.currencyDtoToModel(obj))
-                .filter(cur -> cur.getPairModel().getCurrencyB().equals("USDT"))
-                .sorted(Comparator.comparing(CurrencyModel::getMarketCup).reversed())
-                .limit(15)
-                .collect(Collectors.toList());
-
+            log.debug("Getting the Top cap. 15 : FAILED");
+            throw new RuntimeException("Endpoint is invalid");
+        }
     }
 }

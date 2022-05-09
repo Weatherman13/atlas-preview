@@ -1,5 +1,6 @@
 package ru.thirteenth.atlas.telegram_handler;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -13,6 +14,7 @@ import ru.thirteenth.atlas.service.UserServiceImpl;
 import java.net.URISyntaxException;
 
 @Component
+@RequiredArgsConstructor
 public class MarketFacade {
     private final UserServiceImpl userService;
 
@@ -20,13 +22,6 @@ public class MarketFacade {
 
     private final MarketConditionServiceImpl marketConditionService;
 
-    @Autowired
-    public MarketFacade(UserServiceImpl userService,
-                        ButtonFactoryService buttonService, MarketConditionServiceImpl marketConditionService) {
-        this.userService = userService;
-        this.buttonService = buttonService;
-        this.marketConditionService = marketConditionService;
-    }
 
     public SendMessage getMarketMenu(Message message) {
         var userTelegramId = message.getFrom().getId();
@@ -45,7 +40,7 @@ public class MarketFacade {
     public SendMessage getFearAndGreed(CallbackQuery callback) throws URISyntaxException {
         var userTelegramId = callback.getFrom().getId();
         var bundle = userService.getUserByTelegramId(userTelegramId).getResourceBundle();
-        var marketCondition = this.marketConditionService.getMarketCondition();
+        var marketCondition = this.marketConditionService.getFearAndGreedIndex();
 
         userService.updateUserStateByTelegramId(userTelegramId, State.FEAR_AND_GREED);
 

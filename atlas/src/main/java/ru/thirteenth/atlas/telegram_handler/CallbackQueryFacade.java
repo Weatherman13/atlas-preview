@@ -1,5 +1,6 @@
 package ru.thirteenth.atlas.telegram_handler;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -13,6 +14,7 @@ import ru.thirteenth.atlas.service.UserServiceImpl;
 import java.net.URISyntaxException;
 
 @Service
+@RequiredArgsConstructor
 public class CallbackQueryFacade {
     private final MarketConditionServiceImpl marketConditionService;
     private final ButtonFactoryService buttonService;
@@ -20,16 +22,7 @@ public class CallbackQueryFacade {
 
     private final CryptocurrencyInformationService coinService;
 
-    @Autowired
-    public CallbackQueryFacade(MarketConditionServiceImpl marketConditionService
-            , ButtonFactoryService buttonService, UserServiceImpl userService, CryptocurrencyInformationService coinService) {
-        this.marketConditionService = marketConditionService;
-        this.buttonService = buttonService;
-        this.userService = userService;
-        this.coinService = coinService;
-    }
-
-    public SendMessage getInfo(CallbackQuery callback){
+    public SendMessage getInfo(CallbackQuery callback) {
         var userTelegramId = callback.getFrom().getId();
 
         userService.updateUserStateByTelegramId(userTelegramId, State.INFO_PAGE);
@@ -37,14 +30,14 @@ public class CallbackQueryFacade {
 
         return SendMessage.builder()
                 .chatId(callback.getMessage().getChatId().toString())
-                .text("INFORMATION \n  \n"+ "This bot is intended for non-commercial use. It provides information about the state " +
+                .text("INFORMATION \n  \n" + "This bot is intended for non-commercial use. It provides information about the state " +
                         "of the cryptocurrency market, and also allows you to convert cryptocurrency into fiat.\n \n" +
                         "To improve the user experience, write your ideas to me in private messages.")
                 .replyMarkup(buttonService.getBackToMainMenu())
                 .build();
     }
 
-    public SendMessage getMainMenu(CallbackQuery callback){
+    public SendMessage getMainMenu(CallbackQuery callback) {
         var userTelegramId = callback.getFrom().getId();
 
         userService.updateUserStateByTelegramId(userTelegramId, State.MAIN_MENU);
@@ -56,7 +49,7 @@ public class CallbackQueryFacade {
                 .build();
     }
 
-    public SendMessage getMarketConditionMenu(CallbackQuery callback){
+    public SendMessage getMarketConditionMenu(CallbackQuery callback) {
         var userTelegramId = callback.getFrom().getId();
 
         userService.updateUserStateByTelegramId(userTelegramId, State.MARKET_CONDITION_MAIN);
@@ -127,7 +120,7 @@ public class CallbackQueryFacade {
                 .build();
     }
 
-    public SendMessage getСryptoCurrencyMenu(CallbackQuery callback){
+    public SendMessage getСryptoCurrencyMenu(CallbackQuery callback) {
         var userTelegramId = callback.getFrom().getId();
 
         userService.updateUserStateByTelegramId(userTelegramId, State.CRYPTOCURRENCY_MENU);
@@ -169,7 +162,6 @@ public class CallbackQueryFacade {
 //                .replyMarkup(buttonService.getCoinInfoMenu())
 //                .build();
 //    }
-
 
 
 }
