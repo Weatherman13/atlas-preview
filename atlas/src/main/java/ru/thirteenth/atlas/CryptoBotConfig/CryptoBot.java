@@ -21,7 +21,10 @@ import ru.thirteenth.atlas.telegram_handler.*;
 @Slf4j
 public class CryptoBot extends TelegramLongPollingBot {
     private final String BOT_TOKEN = "5304189702:AAHZQMFiaH0zU_XZy9IYb37G_t8oMHCV6Lc";
+    private final String BOT2_TEST_TOKEN = "5398211762:AAHkE8t_QSo6CrE7sYLEkLHDARoOH-slJm8";
+
     private final String BOT_USERNAME = "atlas_syndicate_bot";
+    private final String BOT2_TEST_USERNAME = "AtlasTestBot13";
 
     private final OptionsFacade optionsFacade;
     private final CommandFacade commandFacade;
@@ -43,12 +46,12 @@ public class CryptoBot extends TelegramLongPollingBot {
 
     @Override
     public String getBotToken() {
-        return BOT_TOKEN;
+        return BOT2_TEST_TOKEN;
     }
 
     @Override
     public String getBotUsername() {
-        return BOT_USERNAME;
+        return BOT2_TEST_USERNAME;
     }
 
     @Override
@@ -56,13 +59,12 @@ public class CryptoBot extends TelegramLongPollingBot {
     public void onUpdateReceived(Update update) {
 
 
-
         if (update.hasCallbackQuery()) {
             var payLoad = update.getCallbackQuery().getData();
             var callBack = update.getCallbackQuery();
             var userId = callBack.getFrom().getId();
 
-            log.debug("User: " + userId + ", sent a callback: " + payLoad );
+            log.debug("User: " + userId + ", sent a callback: " + payLoad);
 
             switch (payLoad) {
                 case "GetInfo": {
@@ -191,8 +193,29 @@ public class CryptoBot extends TelegramLongPollingBot {
                     execute(cryptoCurFacade.getСryptoCurrencyMenu(message));
                     return;
                 }
+                case "\uD83D\uDE4D\u200D♂️Profile": {
+                    execute(SendMessage.builder()
+                            .chatId(message.getChatId().toString())
+                            .text(userService.getUserByTelegramId(message
+                                            .getFrom()
+                                            .getId())
+                                    .getResourceBundle()
+                                    .getString("Works..."))
+                            .build());
+                    return;
+                }
+                case "\uD83D\uDE4D\u200D♂️Профиль": {
+                    execute(SendMessage.builder()
+                            .chatId(message.getChatId().toString())
+                            .text(userService.getUserByTelegramId(message
+                                            .getFrom()
+                                            .getId())
+                                    .getResourceBundle()
+                                    .getString("Works..."))
+                            .build());
+                    return;
+                }
             }
-
 
 
             if (message.hasEntities()) {
@@ -237,13 +260,12 @@ public class CryptoBot extends TelegramLongPollingBot {
             }
 
 
-
             if (update.hasMessage() && !update.getMessage().hasEntities()) {
                 var user = update.getMessage().getFrom();
                 var userTelegramId = user.getId();
                 var userState = userService.getStateUserById(userTelegramId);
 
-                switch (userState){
+                switch (userState) {
                     case "COIN_INFO_NAME_PATTERN": {
                         execute(cryptoCurFacade.getCryptocurrencyInfoByName(message));
                         return;

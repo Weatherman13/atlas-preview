@@ -5,34 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="134960b3-c518-4df0-9750-b33e38ecc3f9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_dataformat_jackson_dataformat_yaml_2_13_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_classgraph_classgraph_4_8_116.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_core_v3_swagger_annotations_2_1_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_core_v3_swagger_core_2_1_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_core_v3_swagger_integration_2_1_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_core_v3_swagger_models_2_1_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_12_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_1_0_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springdoc_springdoc_openapi_common_1_6_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springdoc_springdoc_openapi_ui_1_6_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springdoc_springdoc_openapi_webmvc_core_1_6_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_swagger_ui_4_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_webjars_locator_core_0_48.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/CryptocurrencyInformationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/CryptocurrencyInformationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/MarketConditionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/MarketConditionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crypto-house/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/crypto-house/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/CryptoHouseApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/CryptoHouseApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/config/CryptoHouseConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/config/CryptoHouseConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/controller/CbrDailyCotroller.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/controller/CbrDailyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/controller/GateIoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/controller/GateIoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/dto/faq/FearAndGreed.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/dto/faq/FearAndGreed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/dto/gateio/Currency.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/dto/gateio/Currency.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/dto/gateio/MarketList.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/dto/gateio/MarketList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/dto/gateio/PairInfoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/dto/gateio/PairInfoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/exception/handler/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/exception/handler/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/service/impl/CoinInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/service/impl/CoinInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/CryptoBotConfig/CryptoBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/CryptoBotConfig/CryptoBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/resources/resource_en.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/resources/resource_en.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/resources/resource_ru.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/resources/resource_ru.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +125,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose.yaml: Compose Deployment">
+  <component name="RunManager" selected="Spring Boot.AtlasApplication">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.thirteenth.atlas.main.Test" />
       <module name="atlas" />
@@ -220,9 +197,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.docker-compose.yaml: Compose Deployment" />
         <item itemvalue="Spring Boot.AtlasApplication" />
         <item itemvalue="Spring Boot.CryptoHouseApplication" />
+        <item itemvalue="Docker.docker-compose.yaml: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yaml.atlas: Compose Deployment" />
         <item itemvalue="Application.Test" />
       </list>
@@ -256,7 +233,7 @@
       <workItem from="1651924984513" duration="27934000" />
       <workItem from="1652021099483" duration="15278000" />
       <workItem from="1652085543816" duration="26406000" />
-      <workItem from="1652169318867" duration="4411000" />
+      <workItem from="1652169318867" duration="10494000" />
     </task>
     <servers />
   </component>

@@ -10,10 +10,13 @@ public class resource_en extends ListResourceBundle {
                     {"Market", "\uD83C\uDFDBMarket"},
                     {"Nav_Сryptocurrency", "₿ Сryptocurrency"},
                     {"BotInformation", "\uD83D\uDDD2Information"},
-                    {"BotInformationBody", "❓ INFORMATION ❓" + "\n\n" + "This bot provides information " +
-                            " about the current state of the cryptocurrency market, allows you to find out the current state" +
-                             "of various crypto assets, and allows you to convert cryptocurrency to fiat and back." +
-                             "\n \n" + "The bot is not intended for commercial use."},
+                    {"BotInformationBody", "❓ INFORMATION ❓" + "\n\n" + "What can a bot do?\n\n" +
+                            " Provides information about the cryptocurrency market:\n" +
+                            " -top 15 largest cryptocurrencies by capitalization\n" +
+                            " -fear and greed index\n\n" +
+                            " Provides information about more than 300 cryptocurrencies:\n" +
+                            " -shows up-to-date information about the status of the selected cryptocurrency (high, low, exchange rate, etc.)\n\n" +
+                            " Allows you to convert any of the supported cryptocurrencies into rubles and dollars and vice versa."},
                     {"OptionMenuHeader", "⚙️ Settings ⚙️"},
                     {"ChangeLanguageButton", "Change the language"},
                     {"ChooseLanguage", "\uD83C\uDF0D Choose language, please \uD83C\uDF0D"},
@@ -80,6 +83,8 @@ public class resource_en extends ListResourceBundle {
                     {"FiatToCryptoHeader", "\uD83D\uDCB2  --->  ₿ \n\n\n"},
                     {"FiatToCryptoBody", "Enter the suffix of the cryptocurrency you want to convert your currency" +
                             " into and the amount of currency.\n\n" + "Example: 'BTC, 10000' or 'btc, 8999.35'"},
+                    {"Works...", "⚙ This section is under development and will be available in the future"}
+
 
 
             };

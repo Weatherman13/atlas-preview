@@ -5,20 +5,20 @@ services:
     build: ./eureka
     restart: always
     ports:
-      - 8761:8761
+      - :8761
     environment:
       - EUREKA_HOST=http://eureka:8761/eureka/
   cryptohouse:
     build: ./crypto-house
     restart: always
-    ports:
-      - 9090:9090
+#    ports:
+#      - 9090:9090
     environment:
       - EUREKA_HOST=http://eureka:8761/eureka/
   atlas:
     build: ./atlas
-    ports:
-      - 8082:8080
+#    ports:
+#      - 8082:8080
     restart: always
     environment:
       - EUREKA_HOST=http://eureka:8761/eureka/
@@ -32,10 +32,14 @@ services:
       - MYSQL_USER=borz0y
       - MYSQL_PASSWORD=58rjK[jP1
       - MYSQL_DATABASE=atlas-bot
-
+    volumes:
+      - mysql_data:/var/lib/mysql
 
   adminer:
     image: adminer
     restart: always
     ports:
-      - 8086:8080
+      - 8089:8080
+
+volumes:
+  mysql_data:
