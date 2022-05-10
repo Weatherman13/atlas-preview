@@ -5,20 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="134960b3-c518-4df0-9750-b33e38ecc3f9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6df3ec53-4a0b-495b-ad6a-50ef39d22c2f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6df3ec53-4a0b-495b-ad6a-50ef39d22c2f.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_dataformat_jackson_dataformat_yaml_2_13_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_3_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_failureaccess_1_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_30_0_jre.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_listenablefuture_9999_0_empty_to_avoid_conflict_with_guava.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_j2objc_j2objc_annotations_1_3.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_classgraph_classgraph_4_8_116.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_core_v3_swagger_annotations_2_1_11.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_core_v3_swagger_core_2_1_11.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_core_v3_swagger_integration_2_1_11.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_core_v3_swagger_models_2_1_11.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_12_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_qual_3_5_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_1_0_Final.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springdoc_springdoc_openapi_common_1_6_2.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springdoc_springdoc_openapi_ui_1_6_2.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springdoc_springdoc_openapi_webmvc_core_1_6_2.xml" beforeDir="false" />
@@ -26,29 +20,19 @@
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_webjars_locator_core_0_48.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/atlas/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/CryptoBotConfig/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/CryptoBotConfig/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/CryptoBotConfig/CryptoBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/CryptoBotConfig/CryptoBot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/controller/TestController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/CryptocurrencyInformationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/CryptocurrencyInformationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/MarketConditionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/MarketConditionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/MarketConditionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/MarketConditionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/RubConvertorServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/RubConvertorServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/RubUsdRateServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/RubUsdRateServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/UsdConvertorServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/UsdConvertorServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/service/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/telegram_handler/CallbackQueryFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/telegram_handler/CallbackQueryFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/telegram_handler/CommandFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/telegram_handler/CommandFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/telegram_handler/InformationFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/telegram_handler/InformationFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/telegram_handler/MarketFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/telegram_handler/MarketFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/telegram_handler/OptionsFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/telegram_handler/OptionsFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/telegram_handler/СryptocurrencyFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/java/ru/thirteenth/atlas/telegram_handler/СryptocurrencyFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atlas/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/atlas/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crypto-house/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/crypto-house/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/CryptoHouseApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/CryptoHouseApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/config/CryptoHouseConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/config/CryptoHouseConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/parser/CbrCurrencyParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/parser/CbrCurrencyParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/controller/CbrDailyCotroller.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/controller/CbrDailyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/controller/GateIoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/controller/GateIoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/dto/faq/FearAndGreed.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/dto/faq/FearAndGreed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/dto/gateio/Currency.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/dto/gateio/Currency.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/dto/gateio/MarketList.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/dto/gateio/MarketList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/dto/gateio/PairInfoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/dto/gateio/PairInfoDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/exception/handler/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/exception/handler/GlobalExceptionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/service/impl/CoinInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/service/impl/CoinInfoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/service/impl/FearAndGreedServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/service/impl/FearAndGreedServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/service/impl/ToRubConverterServiceCbrImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto-house/src/main/java/ru/thirteenth/kryptohouse/service/impl/ToRubConverterServiceCbrImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crypto-house/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/crypto-house/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,25 +99,25 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelOrder2": "2",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RequestMappingsPanelWidth2": "75",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Weatherman/Documents/ProjectIdea/icarus - reserve",
-    "nodejs_package_manager_path": "npm",
-    "spring.configuration.checksum": "8ba158bcaac33d86887243c76ed378c1"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelOrder2&quot;: &quot;2&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth2&quot;: &quot;75&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Weatherman/Documents/ProjectIdea/icarus - reserve&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;8ba158bcaac33d86887243c76ed378c1&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -152,9 +136,9 @@
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn --builder" />
+      <command value="mvn clean install" />
       <command value="mvn clean" />
       <command value="mvn spring-boot:build-image" />
-      <command value="mvn clean install" />
     </option>
   </component>
   <component name="RunDashboard">
@@ -164,20 +148,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.AtlasApplication">
-    <configuration name="GateIoController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.thirteenth.kryptohouse.controller.GateIoController" />
-      <module name="cryptohouse" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.thirteenth.kryptohouse.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Docker.docker-compose.yaml: Compose Deployment">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.thirteenth.atlas.main.Test" />
       <module name="atlas" />
@@ -226,9 +197,22 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="docker-compose.yaml.atlas: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="atlas" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yaml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="Application.GateIoController" />
       <item itemvalue="Application.Test" />
+      <item itemvalue="Docker.docker-compose.yaml.atlas: Compose Deployment" />
       <item itemvalue="Docker.docker-compose.yaml: Compose Deployment" />
       <item itemvalue="Spring Boot.EurekaApplication" />
       <item itemvalue="Spring Boot.CryptoHouseApplication" />
@@ -236,11 +220,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.docker-compose.yaml: Compose Deployment" />
         <item itemvalue="Spring Boot.AtlasApplication" />
         <item itemvalue="Spring Boot.CryptoHouseApplication" />
-        <item itemvalue="Docker.docker-compose.yaml: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yaml.atlas: Compose Deployment" />
         <item itemvalue="Application.Test" />
-        <item itemvalue="Application.GateIoController" />
       </list>
     </recent_temporary>
   </component>
@@ -271,7 +255,8 @@
       <workItem from="1651752314415" duration="58012000" />
       <workItem from="1651924984513" duration="27934000" />
       <workItem from="1652021099483" duration="15278000" />
-      <workItem from="1652085543816" duration="17381000" />
+      <workItem from="1652085543816" duration="26406000" />
+      <workItem from="1652169318867" duration="4411000" />
     </task>
     <servers />
   </component>
@@ -283,7 +268,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

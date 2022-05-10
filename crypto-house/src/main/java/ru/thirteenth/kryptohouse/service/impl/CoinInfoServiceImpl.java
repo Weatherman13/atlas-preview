@@ -1,5 +1,6 @@
 package ru.thirteenth.kryptohouse.service.impl;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +20,7 @@ import java.util.stream.Collectors;
 
 @Service
 @Slf4j
+@RequiredArgsConstructor
 public class CoinInfoServiceImpl implements CoinInfoService {
     private final String MARKET_LIST_END = "https://data.gateapi.io/api2/1/marketlist";
 
@@ -27,10 +29,6 @@ public class CoinInfoServiceImpl implements CoinInfoService {
 
     private final RestTemplate restTemplate;
 
-    @Autowired
-    public CoinInfoServiceImpl(RestTemplate restTemplate) {
-        this.restTemplate = restTemplate;
-    }
 
 
     public Set<Currency> getCurrencyInfo(Set<String> currencyNames) {
@@ -66,7 +64,6 @@ public class CoinInfoServiceImpl implements CoinInfoService {
             response = restTemplate.getForEntity(new URI(MARKET_LIST_END), MarketList.class);
 
             log.debug("Getting a list of supported cryptocurrency pairs : SUCCESSFUL");
-
             return response.getBody();
         } catch (URISyntaxException e) {
 

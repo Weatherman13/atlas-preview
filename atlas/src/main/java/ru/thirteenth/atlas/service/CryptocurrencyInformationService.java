@@ -66,6 +66,7 @@ public class CryptocurrencyInformationService {
 
             log.debug("Getting the cryptocurrency info by name : SUCCESSFUL");
 
+            System.out.println(response.getBody());
             return response.getBody()
                     .getMarketList()
                     .stream()
