@@ -39,6 +39,7 @@ Spring cloud сервис, реализующий паттерн Service Discove
 - MupStruct
 - Swagger
 - Docker
+- Telegrambots (библиотека для Telegram Api https://github.com/rubenlagus/TelegramBots)
 
 ## Сборка проекта:
 Перед началом вам необходимо получить токен у Bot Father в телеграмм https://core.telegram.org/api
@@ -57,3 +58,13 @@ $ cd eureka
 $ mvn spring-boot:build-image
 $ cd ..
 $ docker-compose up --build
+```
+
+## Docker:
+
+### В docker-compose есть всё необходимое для мониторинга бота:
+- 8089 порт : консоль для управления базой данных (данные из базы перемещены с помощью маппинга томов на хост докера, так что они не пропадают после перезагрузки)
+
+
+
+
